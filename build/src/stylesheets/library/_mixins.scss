@@ -1,0 +1,33 @@
+/*==========================================================================
+   MEDIA QUERIES // example @include respond-to(mobile) { }
+ ========================================================================== */
+
+  /*
+    @include respond-to(mobile) {}
+    @include respond-to(tablet) {}
+    @include respond-to(desktopSm) {}
+    @include respond-to(desktopLg) {}
+  */
+
+@mixin respond-to($media) {
+
+  @if $media == desktop {
+    $total-columns: 32;
+    @media all and (min-width: 1024px) { @content; }
+  }
+
+  @if $media == tablet {
+    $total-columns: 24;
+    @media all and (min-width: 768px) and (max-width: 1023px) { @content; }
+  }
+
+  @if $media == mobile {
+    $total-columns: 16;
+    @media all and (max-width: 767px) { @content; }
+  }
+}
+
+/*==========================================================================
+   FONTS
+ ========================================================================== */
+// @mixin AvertaReg() { font-family: 'averta_stdregular', Helvetica, sans-serif; font-weight: lighter; }

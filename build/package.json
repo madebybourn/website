@@ -1,13 +1,13 @@
 {
-  "name": "sass_starter",
+  "name": "gulp_starter",
   "version": "1.0.0",
-  "description": "Sass Starter Files",
+  "description": "Gulp Starter Files",
   "main": "index.js",
   "scripts": {
     "start": "gulp"
   },
   "keywords": [],
-  "author": "Jatin Varlyani",
+  "author": "Kim Goulbourne",
   "license": "",
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -23,5 +23,8 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "bourbon": "^6.0.0"
   }
 }

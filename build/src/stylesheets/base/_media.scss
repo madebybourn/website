@@ -1,0 +1,23 @@
+figure {
+  margin: 0;
+}
+
+figcaption {
+  // font-weight: $light-font-weight;
+  // font-size: modular-scale(-1);
+  // font-style: italic;
+  // padding-top: spacing(xx-small);
+  // text-align: center;
+}
+
+img,
+picture {
+  display: block;
+  margin: 0;
+  max-width: 100%;
+}
+
+iframe {
+  height: auto;
+  width: 100%;
+}

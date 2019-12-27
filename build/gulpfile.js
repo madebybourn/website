@@ -1,5 +1,6 @@
 var gulp = require("gulp"),
-    sass = require("gulp-sass"),
+    sass = require("gulp-sass")
+    bourbon = require("bourbon").includePaths,
     postcss = require("gulp-postcss"),
     autoprefixer = require("autoprefixer"),
     cssnano = require("cssnano"),
@@ -9,6 +10,8 @@ var gulp = require("gulp"),
     sourcemaps = require("gulp-sourcemaps"),
     webpack = require('webpack-stream'),
     browserSync = require("browser-sync").create();
+
+sass.compiler = require('node-sass');
 
 var paths = {
     styles: {
@@ -40,7 +43,9 @@ function style() {
         .src(paths.styles.src)
         // Initialize sourcemaps before compilation starts
         .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass({
+          includePaths: [bourbon]
+        }))
         .on("error", sass.logError)
         // Use postcss with autoprefixer and compress the compiled file using cssnano
         .pipe(postcss([autoprefixer(), cssnano()]))
@@ -130,8 +135,8 @@ function watch() {
         // host: 'localhost',
         // Use the SSL cert to make this work with browsersync
         https: {
-          key: "./server.key",
-          cert: "./server.crt",
+          key: "./ssl-cert/server.key",
+          cert: "./ssl-cert/server.crt",
         }, 
         // files: ['../templates/**/*'],
     });

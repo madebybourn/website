@@ -1,0 +1,32 @@
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  // font-size: $body-font-size;
+  // line-height: 1.6;
+
+  @include respond-to(mobile) {
+    // font-size: $body-font-size-mobile;
+  }
+}
+
+li + li {
+  // margin-top: spacing(xxx-small);
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
