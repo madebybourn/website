@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # If the request is not secure (local)
+    RewriteCond %{HTTPS} off
+    # If the request is not secure (Fortrabbit)
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    # Redirect to the secure version
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,N]
+
+    # Send would-be 404 requests to Craft
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
+    RewriteRule (.+) index.php?p=$1 [QSA,L]
+</IfModule>
