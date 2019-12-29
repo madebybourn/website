@@ -30,12 +30,12 @@ var paths = {
         src: "./src/javascripts/vendor/**/*.js",
         dest: "../web/javascripts",
     },
+
+    fonts: {
+      src: "./src/fonts/**/*",
+      dest: "../web/fonts",
+    },
  
-    // Easily add additional paths
-    // html: {
-    //     src: "./src/templates/*.html",
-    //     dest: "../templates/compiled",
-    // }
 };
 
 function style() {
@@ -97,20 +97,12 @@ function jquery() {
   .src('./src/javascripts/jquery.js')
     .pipe(gulp.dest(paths.vendor_scripts.dest))
 }
-  
-/*
-function templates(){
-    gulp.src('views/*.hbs')
-      .pipe(handlebars())
-      //.pipe(wrap('Handlebars.template(<%= contents %>)'))
-      .pipe(declare({
-        namespace: 'MyApp.templates',
-        noRedeclare: true, // Avoid duplicate declarations
-      }))
-      .pipe(concat('templates.js'))
-      .pipe(gulp.dest('assets/js/'));
+
+function fonts() {
+  return gulp
+  .src(paths.fonts.src)
+    .pipe(gulp.dest(paths.fonts.dest))
 }
-*/
 
 
 // A simple task to reload the page
@@ -168,8 +160,8 @@ exports.vendor_scripts = vendor_scripts;
 /*
  * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
  */
-var dev = gulp.parallel(style, app_scripts, vendor_scripts, jquery, watch);
-var build = gulp.parallel(style, app_scripts, vendor_scripts, jquery);
+var dev = gulp.parallel(style, app_scripts, watch);
+var build = gulp.parallel(style, app_scripts, vendor_scripts, jquery, fonts);
  
 /*
  * You can still use `gulp.task` to expose tasks

@@ -1,0 +1,11 @@
+$c-logo-width: 80px;
+$c-logo-height: 15px;
+
+.c-logo {
+    position: relative;
+    width: $c-logo-width;
+
+    svg {
+        @include svg-fit($c-logo-width, $c-logo-height);
+    }
+}

@@ -1,0 +1,6 @@
+
+.c-header {
+    @include padding(spacing(medium) $global-side-spacing 0);
+    align-items: center;
+    display: flex;
+}

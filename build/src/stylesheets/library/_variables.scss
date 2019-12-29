@@ -1,4 +1,108 @@
-/*==========================================================================
-   COLORS
- ========================================================================== */
-$black:#000;
+@function emCal($pixelBasedNum, $emBase: 16px){
+  @return $pixelBasedNum / $emBase * 1em;
+}
+
+// Breakpoints
+$small-screen: 768px;
+$medium-screen: 1024px;
+$large-screen: 1280px;
+$xlarge-screen: 1440px;
+
+// Colors
+$white: #fff;
+$black: #000;
+$dark-gray: #111;
+$medium-gray: #444;
+$light-gray: #999;
+$offwhite: #FCFCFC;
+
+$ventures: #25A984;
+$consulting: #4E5CCD;
+$thoughts: #BF4025;
+$about: #DE8600;
+
+// Font Colors
+$base-font-color: $medium-gray;
+$secondary-font-color: $dark-gray;
+
+// Typography
+$base-font-family: Courier, monospace;
+$heading-font-family: "fredericka_the_greatregular", "Times", serif;
+
+// Font Weights
+$light-font-weight: 300;
+$regular-font-weight: 400;
+$medium-font-weight: 500;
+$bold-font-weight: 600;
+
+// Font Sizes
+$base-font-size:  modular-scale(0);
+$small-font-size: modular-scale(-1);
+$body-font-size: $base-font-size;
+$body-font-size-mobile: modular-scale(2);
+
+// Line height
+$base-line-height: 1.75;
+$heading-line-height: 1.25;
+
+// Other Sizes
+$base-border-radius: 2px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+
+// Spacing
+$spacing: (
+  "xxx-small": 10px,
+  "xx-small": 20px,
+  "x-small":  30px,
+  "small":    40px,
+  "medium":   50px,
+  "large":    60px,
+  "x-large":  80px,
+  "xx-large":  100px,
+  "xxx-large": 150px,
+);
+
+// Z index
+$lowest-z-index: -1;
+$base-z-index: 0;
+$above-z-index: 1;
+$highest-z-index: 999;
+
+// Border
+$base-border-color: #CCC;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-input-height: 50px;
+$form-base-border-color: $base-border-color;
+$form-base-border: solid 1px $form-base-border-color;
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($dark-gray, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 350ms;
+$base-timing: cubic-bezier(.23, 1, .32, 1);
+$base-ease-timing: ease-in-out;
+
+// Small Upcase
+$small-upcase-font-size: $small-font-size;
+$small-upcase-padding-bottom: 3px;
+
+// Global
+$global-side-spacing: 150px;
+// $global-header-height: 40px;
+// $global-min-full-height: 550px;
+// $global-min-full-height-mobile: 400px;
+// $global-full-height: calc(100vh - #{$global-header-height});
+// $global-gutter-spacing: 20px;
+// $global-gutter-spacing-mobile: 10px;
+
+// // Bourn
+// $global-body-width: 700px;
+// $global-body-width-tablet: 800px;
+// $global-wide-width: 1000px;

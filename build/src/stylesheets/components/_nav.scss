@@ -1,0 +1,27 @@
+.c-nav {
+    margin-left: spacing(large);
+}
+
+.c-nav-items {
+    align-items: center;
+    display: flex;
+}
+
+.c-nav-item {
+    font-size: $base-font-size;
+
+    a:link,
+    a:visited  {
+        border-bottom-color: transparent;
+    }
+
+    a:hover,
+    a:active,
+    a.is-active {
+        border-bottom-color: $dark-gray;
+    }
+}
+
+.c-nav-item + .c-nav-item {
+    margin-left: spacing(small);
+}
