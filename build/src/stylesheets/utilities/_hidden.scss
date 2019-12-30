@@ -1,0 +1,21 @@
+.u-hidden {
+    display: none;
+}
+
+.u-hidden\@small {
+    @include respond-to(small) {
+        display: none;
+    }
+}
+
+.u-hidden\@medium {
+    @include respond-to(medium) {
+        display: none;
+    }
+}
+
+.u-hidden\@large {
+    @include respond-to(large) {
+        display: none;
+    }
+}

@@ -10,15 +10,52 @@
     </section>
 
     <section class="c-page-content">
-        <h2 class="u-hidden">Services</h2>
-        <div class="c-services u-grid">
-            {% for service in entry.consultingServices.all() %}
-            <div class="c-service u-grid__column--4">
-                <h3 class="c-service__category">{{service.serviceCategory}}</h3>
-                <div class="c-service__options">{{service.serviceOptions}}</div>
+        <section class="c-page-content__section">
+            <h2 class="u-hidden">Services</h2>
+            <div class="c-services u-grid">
+                {% for service in entry.consultingServices.all() %}
+                <div class="c-service u-grid__column--4">
+                    <h3 class="c-service__category">{{service.serviceCategory}}</h3>
+                    <div class="c-service__options">{{service.serviceOptions}}</div>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
+        </section>
+        <section class="c-page-content__section">
+            <div class="u-grid">
+                <div class="u-grid__column--3">
+                    <h2>{{entry.consultingClientsHeading}}</h2>
+                </div>
+                <div class="u-grid__column--6">
+                    {% for client in entry.consultingClientsSelect.all() %}
+                        <div class="c-client">
+                            <div class="c-client__info">
+                                <h3 class="c-client__name">{{client.clientName}}</h3>
+                                <span> - </span>
+                                <p class="c-client__description">{{client.clientDescription}}</p>
+                            </div>
+                            {% if client.clientIndustryTags.count() > 0 %}
+                            <div class="c-client__tags c-tags">
+                                {% for tag in client.clientIndustryTags.all() %}
+                                <small class="c-client__tag c-tag">{{tag.title}}</small>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section class="c-page-content__section">
+            <div class="u-grid">
+                <div class="u-grid__column--3">
+                    <h2>{{entry.consultingContactHeading}}</h2>
+                </div>
+                <div class="u-grid__column--6">
+                    {{entry.consultingContactDescription}}
+                </div>
+            </div>
+        </section>
     </section>
 
 {% endblock %}

@@ -1,0 +1,29 @@
+.c-client + .c-client {
+    margin-top: spacing(medium);
+}
+
+.c-client__info {
+    font-size: modular-scale(0);
+}
+
+.c-client__name,
+.c-client__description {
+    display: inline;
+}
+
+.c-client__name {
+    font-size: inherit;
+    font-family: $base-font-family-bold;
+    font-weight: $bold-font-weight;
+}
+
+.c-client__tag {
+    &::after {
+        content: ", ";
+    }
+
+    &:only-child::after,
+    &:last-child::after {
+        content: "";
+    }
+}

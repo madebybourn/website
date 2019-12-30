@@ -1,3 +1,7 @@
 .c-page-content {
     @include padding(0 $global-side-spacing spacing(xx-large));
 }
+
+.c-page-content__section + .c-page-content__section {
+    margin-top: spacing(xx-large);
+}
