@@ -16,18 +16,18 @@ $medium-gray: #444;
 $light-gray: #999;
 $offwhite: #FCFCFC;
 
-$ventures: #25A984;
-$consulting: #4E5CCD;
-$thoughts: #BF4025;
-$about: #DE8600;
+$color-ventures: #25A984;
+$color-consulting: #4E5CCD;
+$color-thoughts: #BF4025;
+$color-about: #DE8600;
 
 // Font Colors
 $base-font-color: $medium-gray;
 $secondary-font-color: $dark-gray;
 
 // Typography
-$base-font-family: Courier, monospace;
-$heading-font-family: "fredericka_the_greatregular", "Times", serif;
+$base-font-family: "gt_america_mono_trialregular", $font-stack-monaco;
+$heading-font-family: "fredericka_the_greatregular", $font-stack-garamond;
 
 // Font Weights
 $light-font-weight: 300;
