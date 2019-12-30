@@ -147,11 +147,17 @@ hr {
 
 strong,
 b {
+  font-family: $base-font-family-bold;
   font-weight: $bold-font-weight;
 }
 
-em,
 i {
+  font-style: normal;
+}
+
+em {
+  font-family: monospace;
+  font-weight: inherit;
   font-style: italic;
 }
 

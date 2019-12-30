@@ -17,6 +17,10 @@
     font-weight: $bold-font-weight;
 }
 
+.c-client__tags {
+    margin-top: spacing(xxx-small);
+}
+
 .c-client__tag {
     &::after {
         content: ", ";

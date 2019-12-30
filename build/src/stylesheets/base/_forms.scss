@@ -34,15 +34,33 @@ button {
   border-radius: $base-border-radius;
   box-shadow: 0;
   box-sizing: border-box;
+  color: $dark-gray;
   height: $form-input-height;
-  padding: spacing(xx-small);
+  padding: $form-input-padding;
   transition: border-color $base-duration $base-timing;
   width: 100%;
 
   &:hover,
   &:focus {
+    border-color: $dark-gray;
     box-shadow: 0;
     outline: none;
+
+    .u-page--ventures & {
+      border-color: $color-ventures;
+    }
+
+    .u-page--consulting & {
+      border-color: $color-consulting;
+    }
+
+    .u-page--thoughts & {
+      border-color: $color-thoughts;
+    }
+
+    .u-page--about & {
+      border-color: $color-about;
+    }
   }
 
   &:disabled {
@@ -60,6 +78,7 @@ button {
 }
 
 textarea {
+  line-height: $base-line-height;
   min-height: $form-input-height * 4;
   resize: vertical;
 }

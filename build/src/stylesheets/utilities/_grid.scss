@@ -6,7 +6,7 @@
   @for $i from 1 through 12 {
     .u-grid__column--#{$i} {
     //   float: left;
-      margin-right: spacing(small);
+      margin-right: spacing(medium);
       width: percentage($i / 12);
     }
     

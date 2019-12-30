@@ -22,3 +22,8 @@
 .c-footer__item + .c-footer__item {
     margin-left: spacing(small);
 }
+
+.c-footer__item--copyright {
+    font-family: $base-font-family-medium;
+    font-weight: $medium-font-weight;
+}

@@ -81,41 +81,49 @@
                                 <p class="message error">{{ craft.app.session.getFlash('error') }}</p>
                             {% endif %}
 
-                            <div class="c-form__field-group u-grid">
-                                <div class="u-grid__column--6">
+                            <div class="c-form__field-group">
+                                <div class="c-form__field">
                                     <label for="first-name">First Name</label>
                                     <input id="first-name" type="text" name="message[firstName]" value="{{ message.message.firstName ?? '' }}">
                                     {{ message is defined and message ? errorList(message.getErrors('message]')) }}
                                 </div>
-                                <div class="u-grid__column--6">
+                                <div class="c-form__field">
                                     <label for="last-name">Last Name</label>
                                     <input id="last-name" type="text" name="message[lastName]" value="{{ message.message.lastName ?? '' }}">
                                     {{ message is defined and message ? errorList(message.getErrors('message')) }}
                                 </div>
                             </div>
 
-                            <!-- <div class="c-form__field-group"> -->
-                            <!-- <label for="from-name">From Name</label>
-                            <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
-                            {{ message is defined and message ? errorList(message.getErrors('fromName')) }} -->
-                            <!-- </div> -->
+                            <!-- <div class="c-form__field-group">
+                                <div class="c-form__field">
+                                    <label for="from-name">From Name</label>
+                                    <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+                                    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+                                </div>
+                           </div> -->
 
                             <div class="c-form__field-group">
-                                <label for="from-email">Email</label>
-                                <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
-                                {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+                                <div class="c-form__field">
+                                    <label for="from-email">Email</label>
+                                    <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+                                    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+                                </div>
                             </div>
 
-                            <!-- <div class="c-form__field-group"> -->
-                            <!-- <label for="subject">Subject</label>
-                            <input id="subject" type="text" name="subject" value="{{ message.subject ?? '' }}">
-                            {{ message is defined and message ? errorList(message.getErrors('subject')) }} -->
-                            <!-- </div> -->
+                            <!-- <div class="c-form__field-group">
+                                <div class="c-form__field">
+                                    <label for="subject">Subject</label>
+                                    <input id="subject" type="text" name="subject" value="{{ message.subject ?? '' }}">
+                                    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+                                </div>
+                            </div> -->
 
                             <div class="c-form__field-group">
-                                <label for="message">Tell us more about your idea and needs.</label>
-                                <textarea rows="10" cols="40" id="message" name="message[body]">{{ message.message.body ?? '' }}</textarea>
-                                {{ message is defined and message ? errorList(message.getErrors('message')) }}
+                                <div class="c-form__field">
+                                    <label for="message">Tell us more about your idea and needs.</label>
+                                    <textarea rows="10" cols="40" id="message" name="message[body]">{{ message.message.body ?? '' }}</textarea>
+                                    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+                                </div>
                             </div>
 
                             <div class="c-form__button-group">
