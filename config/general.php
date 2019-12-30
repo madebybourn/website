@@ -26,11 +26,6 @@ return [
         // Whether to save the project config out to config/project.yaml
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => false,
-
-        'aliases' => [
-            '@assetBaseUrl' => getenv('ASSETS_BASE_URL'),
-            '@assetBasePath' => getenv('ASSETS_BASE_PATH'),
-        ],
     ],
 
     // Dev environment settings
@@ -38,13 +33,22 @@ return [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
         'siteUrl' => "//local.madebybourn.com",
+        'aliases' => [
+            '@assetBaseUrl' => "//local.madebybourn.com/uploads",
+            '@assetBasePath' => "uploads",
+        ],
     ],
+    
 
     // Staging environment settings
     'staging' => [
         // Set this to `false` to prevent administrative changes from being made on staging
         'allowAdminChanges' => true,
-        'siteUrl' => "//staging.madebybourn.com",
+        'siteUrl' => "//madebybourn-staging.frb.io",
+        'aliases' => [
+            '@assetBaseUrl' => "//madebybourn-staging.frb.io/uploads",
+            '@assetBasePath' => "uploads",
+        ],
     ],
 
     // Production environment settings
@@ -52,5 +56,9 @@ return [
         // Set this to `false` to prevent administrative changes from being made on production
         'allowAdminChanges' => true,
         'siteUrl' => "//madebybourn.com",
+        'aliases' => [
+            '@assetBaseUrl' => "//madebybourn.com/uploads",
+            '@assetBasePath' => "uploads",
+        ],
     ],
 ];
