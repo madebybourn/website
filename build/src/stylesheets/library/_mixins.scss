@@ -1,22 +1,22 @@
 @mixin respond-to($media) {
 
-  @if $media == desktopXLg {
+  @if $media == xx-large {
     @media all and (min-width: $xlarge-screen) { @content; }
   }
 
-  @if $media == desktopLg {
+  @if $media == x-large {
     @media all and (min-width: $large-screen) { @content; }
   }
 
-  @if $media == desktop {
+  @if $media == large {
     @media all and (min-width: $medium-screen) { @content; }
   }
 
-  @if $media == tablet {
+  @if $media == medium {
     @media all and (min-width: $small-screen) and (max-width: ($medium-screen - 1)) { @content; }
   }
 
-  @if $media == mobile {
+  @if $media == small {
     @media all and (max-width: ($small-screen - 1)) { @content; }
   }
 }

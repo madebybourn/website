@@ -10,19 +10,14 @@
     </section>
 
     <section class="c-page-content">
+        <h2 class="u-hidden">Services</h2>
         <div class="c-services u-grid">
+            {% for service in entry.consultingServices.all() %}
             <div class="c-service u-grid__column--4">
-                
+                <h3 class="c-service__category">{{service.serviceCategory}}</h3>
+                <div class="c-service__options">{{service.serviceOptions}}</div>
             </div>
-            <div class="c-service u-grid__column--4">
-                
-            </div>
-            <div class="c-service u-grid__column--4">
-                
-            </div>
-            <div class="c-service u-grid__column--4">
-                
-            </div>
+            {% endfor %}
         </div>
     </section>
 
