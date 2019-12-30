@@ -12,32 +12,32 @@ legend {
 }
 
 label {
+  color: $light-gray;
   display: block;
-  font-weight: 600;
-  // margin-bottom: $small-spacing / 2;
+  font-size: modular-scale(-1);
+  margin-bottom: spacing(xxx-small);
 }
 
 input,
 select,
-textarea {
+textarea,
+button {
   display: block;
-  // font-family: $base-font-family;
-  // font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-size: modular-scale(-1); //$base-font-size;
 }
 
 #{$all-text-inputs} {
   // appearance: none;
-  // background-color: $white;
-  // border: $form-base-border;
-  // border-radius: 0;
-  // box-shadow: 0;
-  // box-sizing: border-box;
-  // font-size: 16px;
-  // height: $form-input-height;
-  // margin-top: spacing(x-small);
-  // padding: spacing(xx-small);
-  // transition: border-color $base-duration $base-timing;
-  // width: 100%;
+  background-color: #F5F5F5;
+  border: $form-base-border;
+  border-radius: $base-border-radius;
+  box-shadow: 0;
+  box-sizing: border-box;
+  height: $form-input-height;
+  padding: spacing(xx-small);
+  transition: border-color $base-duration $base-timing;
+  width: 100%;
 
   &:hover,
   &:focus {
@@ -55,23 +55,59 @@ textarea {
   }
 
   &::placeholder {
-    // color: tint($base-font-color, 40%);
+    color: tint($base-font-color, 40%);
   }
 }
 
 textarea {
+  min-height: $form-input-height * 4;
   resize: vertical;
 }
 
-[type="checkbox"],
-[type="radio"] {
-  
-}
+input[type="submit"],
+button {
+  background-color: $dark-gray;
+  border: 0;
+  border-radius: $base-border-radius;
+  box-shadow: 0;
+  color: $white;
+  cursor: pointer;
+  height: $form-input-height;
+  font-family: $base-font-family-medium;
+  font-weight: $medium-font-weight;
+  padding: spacing(xxx-small);
+  min-width: $form-input-min-width;
+  transition: background-color $base-duration $base-timing;
 
-[type="file"] {
-  
-}
+  .u-page--ventures & {
+    background-color: $color-ventures;
 
-select {
-  
+    &:hover {
+      background-color: shade($color-ventures, 25%);
+    }
+  }
+
+  .u-page--consulting & {
+    background-color: $color-consulting;
+
+    &:hover {
+      background-color: shade($color-consulting, 25%);
+    }
+  }
+
+  .u-page--thoughts & {
+    background-color: $color-thoughts;
+
+    &:hover {
+      background-color: shade($color-thoughts, 25%);
+    }
+  }
+
+  .u-page--about & {
+    background-color: $color-about;
+
+    &:hover {
+      background-color: shade($color-about, 25%);
+    }
+  }
 }

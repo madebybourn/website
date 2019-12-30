@@ -84,6 +84,7 @@ $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
 $form-input-height: 50px;
+$form-input-min-width: 200px;
 $form-base-border-color: $base-border-color;
 $form-base-border: solid 1px $form-base-border-color;
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
