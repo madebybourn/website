@@ -1,3 +1,17 @@
 .c-page-intro {
     @include padding(180px $global-side-spacing);
 }
+
+.c-page-intro__content {
+    max-width: 860px;
+}
+
+.c-page-intro__heading {
+
+}
+
+.c-page-intro__subheading {
+    @extend h2;
+    color: $medium-gray;
+    margin-top: spacing(xx-small);
+}

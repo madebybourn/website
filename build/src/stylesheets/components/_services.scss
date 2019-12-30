@@ -1,0 +1,16 @@
+.c-service {
+    border: $base-border;
+    border-radius: $base-border-radius;
+    height: 100px;
+    position: relative;
+
+    &::before {
+        background-color: $color-consulting;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: -1px;
+        width: 100%;
+    }
+}

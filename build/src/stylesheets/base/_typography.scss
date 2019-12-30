@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading-font-family;
+  color: $dark-gray;
   font-size: modular-scale(1);
   font-weight: $light-font-weight;
   line-height: $heading-line-height;
@@ -21,6 +21,7 @@ h6 {
 }
 
 h1 {
+  font-family: $heading-font-family;
   font-size: modular-scale(11);
 
   @include respond-to(mobile) {
@@ -29,15 +30,15 @@ h1 {
 }
 
 h2 {
-  font-size: modular-scale(4);
+  font-size: modular-scale(3);
 
   @include respond-to(mobile) {
-    font-size: modular-scale(3);
+    font-size: modular-scale(2);
   }
 }
 
 h3 {
-  font-size: modular-scale(3);
+  font-size: modular-scale(2);
 
   @include respond-to(mobile) {
     font-size: modular-scale(1);
@@ -46,12 +47,12 @@ h3 {
 
 p {
   font-size: $body-font-size;
-  line-height: 1.6;
+  line-height: $base-line-height;
   margin: 0;
 
   @include respond-to(mobile) {
-    font-size: $body-font-size-mobile;
-    line-height: 1.65;
+    // font-size: $body-font-size-mobile;
+    // line-height: 1.65;
   }
 }
 
@@ -80,7 +81,8 @@ blockquote {
 }
 
 a {
-  color: $medium-gray;
+  color: currentColor;
+  position: relative;
   outline: 0;
   text-decoration: none;
   transition: color $base-duration $base-timing;
@@ -88,21 +90,50 @@ a {
   &:active,
   &:focus,
   &:hover {
-    color: $black;
+    color: $dark-gray;
+
+    &::after {
+      background-color: $dark-gray;
+      
+      .u-page--ventures & {
+          background-color: $color-ventures;
+      }
+
+      .u-page--consulting & {
+          background-color: $color-consulting;
+      }
+
+      .u-page--thoughts & {
+          background-color: $color-thoughts;
+      }
+
+      .u-page--about & {
+          background-color: $color-about;
+      }
+    }
+  }
+
+  &::after {
+    background-color: transparent;
+    content: "";
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
   }
 
   p &,
   li & {
-    border-bottom: solid 1px $black;
-    color: $black;
-    padding-bottom: 3px;
+    // border-bottom: solid 1px $dark-gray;
+    // color: $dark-gray;
+    // padding-bottom: 3px;
 
-    &:active,
-    &:focus,
-    &:hover {
-      // border-color: $bourn-accent-color;
-      // color: $bourn-accent-color;
-    }
+    // &:active::after,
+    // &:focus::after,
+    // &:hover::after {
+    //   background-color: $dark-gray;
+    // }
   }
 }
 
@@ -112,6 +143,11 @@ hr {
   border-right: 0;
   border-top: 0;
   margin: $base-spacing 0;
+}
+
+strong,
+b {
+  font-weight: $bold-font-weight;
 }
 
 em,
