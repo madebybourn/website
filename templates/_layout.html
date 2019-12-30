@@ -62,11 +62,13 @@
 
 </head>
 
-<body>
+<body class="u-page--{{ craft.app.request.segments|first }}">
 
   {% if craft.app.request.segments|first != 'browser-support' %}
     <!-- header -->
   {% endif %}
+
+  {% include "shared/_header.html" %}
 
   <main class="c-main">
     {% block content %}
@@ -74,6 +76,8 @@
       <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
     {% endblock %}
   </main>
+
+  {% include "shared/_footer.html" %}
 
   <script src="/javascripts/app.js"></script>
 

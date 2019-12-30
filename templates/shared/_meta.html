@@ -1,6 +1,4 @@
 {% if meta is defined %}
-  {% set metaImage = siteUrl ~ meta.metaImage.one().getUrl() %}
-
   <meta name="description" content="{{ meta.metaDescription }}">
   <meta name="keywords" content="{{ meta.metaKeywords }}">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -9,13 +7,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:description" content="{{ meta.metaDescription }}" />
   <meta property="og:url" content="{{ siteUrl }}" />
-  <meta property="og:image" content="{{metaImage}}" />
+  <meta property="og:image" content="{% if meta.metaImage.count() > 0 %}{{meta.metaImage.one().url()}}{% endif %}" />
   <meta property="og:site_name" content="{{ meta.metaTitle }}" />
   <meta property="fb:admins" content="508343267" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ meta.metaTitle }}">
-  <meta name="twitter:image:src" content="{{metaImage}}">
+  <meta name="twitter:image:src" content="{% if meta.metaImage.count() > 0 %}{{meta.metaImage.one().url()}}{% endif %}">
   <meta name="twitter:creator" content="{{ meta.metaTwitterUser }}">
 
   {% if meta.metaTwitterUser != "" %}
