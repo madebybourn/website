@@ -1,12 +1,13 @@
 .c-page-content {
-	@include padding(0 $global-side-spacing spacing(xx-large));
+  @include global-side-padding();
+	@include padding(0 null spacing(xx-large));
 
 	@include breakpoint(medium) {
-		@include padding(0 $global-side-spacing-medium spacing(x-large));
+		@include padding(0 null spacing(x-large));
 	}
 
 	@include breakpoint(small) {
-		@include padding(0 $global-side-spacing-small spacing(large));
+		@include padding(0 null spacing(large));
 	}
 }
 

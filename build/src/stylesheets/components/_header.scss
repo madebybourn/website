@@ -2,16 +2,17 @@ $c-logo-width: 80px;
 $c-logo-height: 15px;
 
 .c-header {
-  @include padding(spacing(medium) $global-side-spacing 0);
+  @include global-side-padding();
+  @include padding(spacing(medium) null 0);
   align-items: center;
   display: flex;
 
   @include breakpoint(medium) {
-    @include padding(spacing(small) $global-side-spacing-medium 0);
+    @include padding(spacing(small) null 0);
   }
 
   @include breakpoint(small) {
-    @include padding($global-side-spacing-small $global-side-spacing-small 0);
+    @include padding($global-side-spacing-small null 0);
   }
 }
 

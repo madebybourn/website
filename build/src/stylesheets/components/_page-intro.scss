@@ -3,14 +3,15 @@ $page-intro-top-padding-medium: 150px;
 $page-intro-top-padding-small: 100px;
 
 .c-page-intro {
-  @include padding($page-intro-top-padding $global-side-spacing);
+  @include global-side-padding();
+  @include padding($page-intro-top-padding null);
 
   @include breakpoint(medium) {
-    @include padding($page-intro-top-padding-medium $global-side-spacing-medium);
+    @include padding($page-intro-top-padding-medium null);
   }
 
   @include breakpoint(small) {
-    @include padding($page-intro-top-padding-small $global-side-spacing-small);
+    @include padding($page-intro-top-padding-small null);
   }
 }
 
