@@ -24,9 +24,11 @@
     {% include "components/_page-intro.html" with { intro: entry } %}
 
     <section class="c-page-content">
-        <div class="c-updates">
+        <div class="c-updates u-grid">
             {% for update in entry.homeUpdates.all() %}
-                {% include "components/_update.html" %}
+                <div class="u-grid__column--6 u-grid__column--12@small">
+                    {% include "components/_update.html" %}
+                </div>
             {% endfor %}
         </div>
     </section>

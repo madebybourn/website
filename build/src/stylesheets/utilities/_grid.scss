@@ -1,61 +1,47 @@
 .u-grid {
-    // @include clearfix;
-    display: flex;
+  // @include clearfix;
+  display: flex;
+}
+  
+@for $i from 1 through 12 {
+  .u-grid__column--#{$i} {
+  //   float: left;
+    margin-right: spacing(medium);
+    width: percentage($i / 12);
   }
   
+
+  div.u-grid__column--#{$i}:only-child,
+  div.u-grid__column--#{$i}:last-child {
+    margin-right: 0;
+  }
+}
+
+@include respond-to(medium) {
   @for $i from 1 through 12 {
-    .u-grid__column--#{$i} {
-    //   float: left;
-      margin-right: spacing(medium);
+    .u-grid__column--#{$i}\@medium {
+      margin-right: spacing(small);
       width: percentage($i / 12);
     }
-    
-  
-    div.u-grid__column--#{$i}:only-child,
-    div.u-grid__column--#{$i}:last-child {
+
+    div.u-grid__column--#{$i}\@medium:only-child,
+    div.u-grid__column--#{$i}\@medium:last-child {
       margin-right: 0;
     }
-  
-    // div.u-grid__column--#{$i} + div.u-grid__column--#{$i} {
-    //   padding-left: $spacing-xx-small;
-  
-    //   &.no-spacing {
-    //     margin-left: -1px;
-    //     padding-left: 0;
-    //   }
-    // }
-  
-    // select.u-grid__column--#{$i} {
-    //   margin-left: -1px;
-    // }
-  
-    // select.u-grid__column--#{$i}:first-of-type {
-    //   margin-left: 0;
-    // }
-  
-    // .u-grid__column--12,
-    // .no-spacing {
-    //   padding: 0;
-    // }
   }
-  
-//   @include breakpoint(small) {
-//     @for $i from 1 through 12 {
-//       .u-grid__column--#{$i}\@small {
-//         float: left;
-//         width: percentage($i / 12);
-//       }
-  
-//       .u-grid__column--12\@small {
-//         padding-left: 0 !important;
-//         padding-right: 0 !important;
-//       }
-  
-//       div.u-grid__column--#{$i} + div.u-grid__column--#{$i} {
-//         &.no-spacing {
-//           margin-left: 0;
-//         }
-//       }
-//     }
-//   }
+}
+
+@include respond-to(small) {
+  @for $i from 1 through 12 {
+    .u-grid__column--#{$i}\@small {
+      margin-right: spacing(x-small);
+      width: percentage($i / 12);
+    }
+
+    div.u-grid__column--#{$i}\@small:only-child,
+    div.u-grid__column--#{$i}\@small:last-child {
+      margin-right: 0;
+    }
+  }
+}
   

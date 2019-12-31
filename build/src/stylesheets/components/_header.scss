@@ -2,21 +2,29 @@ $c-logo-width: 80px;
 $c-logo-height: 15px;
 
 .c-header {
-    @include padding(spacing(medium) $global-side-spacing 0);
-    align-items: center;
-    display: flex;
+  @include padding(spacing(medium) $global-side-spacing 0);
+  align-items: center;
+  display: flex;
+
+  @include respond-to(medium) {
+    @include padding(spacing(small) $global-side-spacing-medium 0);
+  }
+
+  @include respond-to(small) {
+    @include padding($global-side-spacing-small $global-side-spacing-small 0);
+  }
 }
 
 .c-header__logo {
-    position: relative;
-    width: $c-logo-width;
+  position: relative;
+  width: $c-logo-width;
 
-    &::after {
-        content: none;
-        display: none;
-    }
+  &::after {
+    content: none;
+    display: none;
+  }
 
-    svg {
-        @include svg-fit($c-logo-width, $c-logo-height);
-    }
+  svg {
+    @include svg-fit($c-logo-width, $c-logo-height);
+  }
 }
