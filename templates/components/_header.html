@@ -1,6 +1,6 @@
 <header class="c-header" data-header>
   <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
-  <nav class="c-nav">
+  <nav class="c-nav" data-nav>
     <ul class="c-nav__items">
       {% for entry in craft.entries.section('mainNavigation').all() %}
       <li class="c-nav__item">
