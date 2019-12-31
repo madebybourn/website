@@ -34,4 +34,9 @@
   font-size: modular-scale(-2);
   line-height: 1.66;
   padding-bottom: spacing(xxxx-small);
+
+  ul {
+    list-style: none;
+    margin-top: 0;
+  }
 }
