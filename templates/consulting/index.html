@@ -14,10 +14,9 @@
             <h2 class="u-hidden">Services</h2>
             <div class="c-services u-grid">
                 {% for service in entry.consultingServices.all() %}
-                <div class="c-service u-grid__column--4">
-                    <h3 class="c-service__category">{{service.serviceCategory}}</h3>
-                    <div class="c-service__options">{{service.serviceOptions}}</div>
-                </div>
+                    <div class="u-grid__column--4">
+                        {% include "components/_service.html" %}
+                    </div>
                 {% endfor %}
             </div>
         </section>
@@ -28,20 +27,7 @@
                 </div>
                 <div class="u-grid__column--6">
                     {% for client in entry.consultingClientsSelect.all() %}
-                        <div class="c-client">
-                            <div class="c-client__info">
-                                <h3 class="c-client__name">{{client.clientName}}</h3>
-                                <span> - </span>
-                                <p class="c-client__description">{{client.clientDescription}}</p>
-                            </div>
-                            {% if client.clientIndustryTags.count() > 0 %}
-                            <div class="c-client__tags c-tags">
-                                {% for tag in client.clientIndustryTags.all() %}
-                                <small class="c-client__tag c-tag">{{tag.title}}</small>
-                                {% endfor %}
-                            </div>
-                            {% endif %}
-                        </div>
+                        {% include "components/_client.html" %}
                     {% endfor %}
                 </div>
             </div>
@@ -73,6 +59,7 @@
                         <form class="c-form" method="post" action="" accept-charset="UTF-8">
                             {{ csrfInput() }}
                             <input type="hidden" name="action" value="contact-form/send">
+                            <input type="hidden" name="subject" value="Consulting Inquiry">
 
                             <!-- {{ redirectInput('contact/thanks') }} -->
                             {% if craft.app.session.hasFlash('notice') %}
@@ -109,14 +96,6 @@
                                     {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
                                 </div>
                             </div>
-
-                            <!-- <div class="c-form__field-group">
-                                <div class="c-form__field">
-                                    <label for="subject">Subject</label>
-                                    <input id="subject" type="text" name="subject" value="{{ message.subject ?? '' }}">
-                                    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
-                                </div>
-                            </div> -->
 
                             <div class="c-form__field-group">
                                 <div class="c-form__field">
