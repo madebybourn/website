@@ -1,17 +1,13 @@
 ul,
 ol {
-  list-style-type: none;
-  margin: 0;
+  margin: spacing(small) 0 0;
   padding: 0;
+  list-style-position: inside;
 }
 
 li {
-  // font-size: $body-font-size;
-  // line-height: 1.6;
-
-  // @include breakpoint(mobile) {
-  //   font-size: $body-font-size-mobile;
-  // }
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 }
 
 li + li {

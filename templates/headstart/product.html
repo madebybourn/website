@@ -1,0 +1,53 @@
+{% extends "_layout" %}
+{% set title = entry.title %}
+
+{% block content %}
+{% set introCta = { link: "#emailcapture", text: entry.pageEmailCapture.type('emailCaptureForm').one().formButtonText } %}
+
+<div class="c-product-page">
+  {% include "components/_page-intro.html" with { intro: entry, buttonCta: introCta } %}
+
+  <section class="c-page-content">
+    {% if entry.pageInfo is defined %}
+      {% for info in entry.pageInfo %}
+        <div class="c-page-info">
+          <div class="c-page-info__content">
+            <h2 class="c-page-info__content-heading">{{info.heading}}</h2>
+            <div class="c-page-info__content-description">
+              {{info.description}}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </section>
+
+  <div id="email-capture" class="c-product-page__email-capture">
+    <div class="c-product-page__email-capture-form">
+      <form class="c-form" method="post" action="{{entry.pageEmailCapture.type('emailCaptureForm').one().formActionUrl}}" accept-charset="UTF-8">
+        {{ csrfInput() }}
+
+        {% for field in entry.pageEmailCapture.type('emailCaptureFields') %}
+          <div class="c-form__field-group">
+            <div class="c-form__field">
+              <label for="{{field.fieldName}}">{{field.fieldLabel}}</label>
+              {% if field.fieldType == "text" %}
+              <input id="{{field.fieldName}}" type="text" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}">
+              {% elseif field.fieldType == "email" %}
+              <input id="{{field.fieldName}}" type="email" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}">
+              {% elseif field.fieldType == "textarea" %}
+              <textarea id="{{field.fieldName}}" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}"></textarea>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="c-form__button-group">
+          <button type="submit" class="c-form__button">{{entry.pageEmailCapture.type('emailCaptureForm').one().formButtonText}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

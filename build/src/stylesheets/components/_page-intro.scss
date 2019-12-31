@@ -4,7 +4,11 @@ $page-intro-top-padding-small: 100px;
 
 .c-page-intro {
   @include global-side-padding();
+}
+
+.c-page-intro__content {
   @include padding($page-intro-top-padding null);
+  max-width: 860px;
 
   @include breakpoint(medium) {
     @include padding($page-intro-top-padding-medium null);
@@ -15,16 +19,19 @@ $page-intro-top-padding-small: 100px;
   }
 }
 
-.c-page-intro__content {
-  max-width: 860px;
-}
-
-.c-page-intro__heading {
-
-}
-
 .c-page-intro__subheading {
   @extend h2;
   color: $medium-gray;
   margin-top: spacing(xx-small);
+}
+
+.c-page-intro__button {
+  display: none;
+
+  @include breakpoint(small) {
+    display: block;
+    margin-bottom: spacing(large);
+    margin-top: -(spacing(x-small));
+    width: 100%;
+  }
 }

@@ -1,0 +1,73 @@
+$product-page-email-capture-width: 300px;
+$product-page-email-capture-width-medium: 275px;
+$product-page-padding-right: $global-side-spacing + $product-page-email-capture-width + (spacing(xx-small) * 2) + spacing(x-large);
+$product-page-padding-right-medium: $global-side-spacing-medium + $product-page-email-capture-width + (spacing(xx-small) * 2) + spacing(medium);
+
+.c-product-page {
+  position: relative;
+  padding-right: $product-page-padding-right;
+
+  @include breakpoint(medium) {
+    padding-right: $product-page-padding-right-medium;
+  }
+
+  @include breakpoint(small) {
+    padding-right: 0;
+  }
+
+  .c-page-intro {
+    @include breakpoint(large) {
+      padding-right: 0;
+    }
+
+    @include breakpoint(medium) {
+      padding-right: 0;
+    }
+  }
+}
+
+.c-product-page__email-capture {
+  padding-right: $global-side-spacing;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include breakpoint(medium) {
+    padding-right: $global-side-spacing-medium;
+  }
+
+  @include breakpoint(small) {
+    @include padding(null $global-side-spacing-small spacing(medium));
+    position: static;
+    transform: none;
+  }
+
+  .c-product-page__email-capture-form {
+    @include padding(spacing(xx-small));
+    border: $base-border;
+    width: $product-page-email-capture-width + (spacing(xx-small) * 2);
+
+    @include breakpoint(medium) {
+      width: $product-page-email-capture-width-medium + (spacing(xx-small) * 2);
+    }
+
+    @include breakpoint(small) {
+      width: 100%;  
+    }
+  }
+
+  .c-form__button-group {
+    margin-top: spacing(x-small);
+  }
+
+  button {
+    background-color: $color-products;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: shade($color-products, 25%);
+    }
+  }
+}

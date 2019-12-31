@@ -58,7 +58,7 @@ p {
 
 p + p {
   display: block;
-  margin-top: spacing(medium);
+  margin-top: spacing(small);
 
   @include breakpoint(small) {
     margin-top: spacing(x-small);

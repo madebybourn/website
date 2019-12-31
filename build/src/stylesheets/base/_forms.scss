@@ -129,4 +129,12 @@ button {
       background-color: shade($color-about, 25%);
     }
   }
+
+  .u-page--headstart & {
+    background-color: $color-products;
+
+    &:hover {
+      background-color: shade($color-products, 25%);
+    }
+  }
 }

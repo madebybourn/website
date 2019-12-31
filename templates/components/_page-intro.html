@@ -7,4 +7,7 @@
 		<div class="c-page-intro__subheading">{{intro.pageSubheading}}</div>
 		{% endif %}
 	</div>
+	{% if buttonCta is defined %}
+		<button data-href="{{buttonCta.link}}" class="c-page-intro__button">{{buttonCta.text}}</button>
+	{% endif %}
 </section>
