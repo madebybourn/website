@@ -1,11 +1,21 @@
 <footer class="c-footer">
 	<div class="c-footer__left">
-		<span class="c-footer__item c-footer__item--copyright">&copy;&nbsp;BOURN LLC</span>
-		<span class="c-footer__item">Made with <span class="icon-heart u-color--{{ craft.app.request.segments|first }}">❤</span> in NYC</span class="c-footer_item">
+		{% for entry in craft.entries.section('footerNavigation').type('leftNavigation').all() %}
+			{% if entry.footerItemUrl is not null %}
+				<a href="{{entry.footerItemUrl}}" class="c-footer__item">{{entry.footerItemText}}</a>
+			{% else %}
+				<span class="c-footer__item">{{entry.footerItemText}}</span>
+			{% endif %}
+		{% endfor %}
 	</div>
 	<div class="c-footer__right">
-		<a href="#" class="c-footer__item">Instagram</a>
-		<a href="#" class="c-footer__item">Twitter</a>
-		<a href="#" class="c-footer__item">hello@madebybourn.com</a>
+		{% for entry in craft.entries.section('footerNavigation').type('rightNavigation').all() %}
+			{% if entry.footerItemUrl is not null %}
+			<a href="{{entry.footerItemUrl}}"
+				class="c-footer__item">{{entry.footerItemText}}</a>
+			{% else %}
+			<span class="c-footer__item">{{entry.footerItemText}}</span>
+			{% endif %}
+		{% endfor %}
 	</div>
 </footer>

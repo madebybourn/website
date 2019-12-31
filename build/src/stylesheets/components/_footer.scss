@@ -32,6 +32,35 @@
   display: block;
   font-size: modular-scale(-1);
   line-height: 1.1;
+
+  span,
+  strong {
+    .u-page--ventures & {
+      color: $color-ventures;
+    }
+
+    .u-page--consulting & {
+      color: $color-consulting;
+    }
+
+    .u-page--thoughts & {
+      color: $color-thoughts;
+    }
+
+    .u-page--about & {
+      color: $color-about;
+    }
+
+    .u-page--headstart & {
+      color: $color-products;
+    }
+  }
+
+  strong {
+    color: $dark-gray;
+    font-family: $base-font-family-medium;
+    font-weight: $medium-font-weight;
+  }
 }
 
 .c-footer__item + .c-footer__item {

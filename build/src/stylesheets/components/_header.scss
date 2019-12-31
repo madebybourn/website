@@ -3,22 +3,29 @@ $c-logo-height: 15px;
 
 .c-header {
   @include global-side-padding();
-  @include padding(spacing(medium) null 0);
+  @include padding(spacing(medium) null spacing(x-small));
   align-items: center;
+  background: $base-background-color;
   display: flex;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $highest-z-index;
 
   @include breakpoint(medium) {
-    @include padding(spacing(small) null 0);
+    @include padding(spacing(small) null spacing(x-small));
   }
 
   @include breakpoint(small) {
-    @include padding($global-side-spacing-small null 0);
+    @include padding($global-side-spacing-small null spacing(x-small));
   }
 }
 
 .c-header__logo {
   position: relative;
   width: $c-logo-width;
+  z-index: $highest-z-index;
 
   &::after {
     content: none;
@@ -26,6 +33,8 @@ $c-logo-height: 15px;
   }
 
   svg {
-    @include svg-fit($c-logo-width, $c-logo-height);
+    height: $c-logo-height;
+    width: $c-logo-width;
+    // @include svg-fit($c-logo-width, $c-logo-height);
   }
 }

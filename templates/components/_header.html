@@ -11,8 +11,21 @@
       </li>
       {% endfor %}
     </ul>
+    <ul class="c-nav__items c-nav__items--mobile">
+    {% for entry in craft.entries.section('footerNavigation').type('rightNavigation').all() %}
+      <li class="c-nav__item c-nav__item--mobile">
+        {% if entry.footerItemUrl is not null %}
+        <a href="{{entry.footerItemUrl}}">{{entry.footerItemText}}</a>
+        {% else %}
+        <span>{{entry.footerItemText}}</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul class="c-nav__mobile-items">
   </nav>
-  <!-- <div class="hamburger">
-      <span></span><span></span><span></span>
-    </div> -->
+  <div class="c-hamburger" data-hamburger>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </header>

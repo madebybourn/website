@@ -9,5 +9,10 @@ html {
 }
 
 body {
-  background: $offwhite;
+  background: $base-background-color;
+  margin-top: spacing(xx-large);
+
+  @include breakpoint(small) {
+    margin-top: spacing(x-large);
+  }
 }
