@@ -9,9 +9,9 @@ li {
   // font-size: $body-font-size;
   // line-height: 1.6;
 
-  @include respond-to(mobile) {
-    // font-size: $body-font-size-mobile;
-  }
+  // @include breakpoint(mobile) {
+  //   font-size: $body-font-size-mobile;
+  // }
 }
 
 li + li {

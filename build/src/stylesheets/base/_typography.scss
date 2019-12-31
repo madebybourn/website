@@ -24,7 +24,7 @@ h1 {
   font-family: $heading-font-family;
   font-size: modular-scale(11);
 
-  @include respond-to(small) {
+  @include breakpoint(small) {
     font-size: modular-scale(7);
   }
 }
@@ -32,7 +32,7 @@ h1 {
 h2 {
   font-size: modular-scale(3);
 
-  @include respond-to(small) {
+  @include breakpoint(small) {
     font-size: modular-scale(2);
   }
 }
@@ -40,7 +40,7 @@ h2 {
 h3 {
   font-size: modular-scale(2);
 
-  @include respond-to(small) {
+  @include breakpoint(small) {
     font-size: modular-scale(1);
   }
 }
@@ -50,7 +50,7 @@ p {
   line-height: $base-line-height;
   margin: 0;
 
-  @include respond-to(small) {
+  @include breakpoint(small) {
     // font-size: $body-font-size-mobile;
     // line-height: 1.65;
   }
@@ -60,7 +60,7 @@ p + p {
   display: block;
   margin-top: spacing(medium);
 
-  @include respond-to(small) {
+  @include breakpoint(small) {
     margin-top: spacing(x-small);
   }
 }
@@ -71,7 +71,7 @@ blockquote {
   font-style: italic;
   margin: spacing(large);
 
-  @include respond-to(small) {
+  @include breakpoint(small) {
     font-size: emCal(22px);
   }
 

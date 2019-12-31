@@ -6,11 +6,11 @@ $c-logo-height: 15px;
   align-items: center;
   display: flex;
 
-  @include respond-to(medium) {
+  @include breakpoint(medium) {
     @include padding(spacing(small) $global-side-spacing-medium 0);
   }
 
-  @include respond-to(small) {
+  @include breakpoint(small) {
     @include padding($global-side-spacing-small $global-side-spacing-small 0);
   }
 }

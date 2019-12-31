@@ -24,7 +24,7 @@
   color: $medium-gray;
   font-size: modular-scale(0);
 
-  @include respond-to(small) {
+  @include breakpoint(small) {
     @include padding(null null spacing(small));
   }
 }

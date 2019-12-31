@@ -3,19 +3,19 @@
 }
 
 .u-hidden\@small {
-  @include respond-to(small) {
+  @include breakpoint(small) {
     display: none;
   }
 }
 
 .u-hidden\@medium {
-  @include respond-to(medium) {
+  @include breakpoint(medium) {
     display: none;
   }
 }
 
 .u-hidden\@large {
-  @include respond-to(large) {
+  @include breakpoint(large) {
     display: none;
   }
 }

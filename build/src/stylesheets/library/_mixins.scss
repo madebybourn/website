@@ -1,4 +1,4 @@
-@mixin respond-to($media) {
+@mixin breakpoint($media) {
 
   @if $media == xx-large {
     @media all and (min-width: $xlarge-screen) { @content; }

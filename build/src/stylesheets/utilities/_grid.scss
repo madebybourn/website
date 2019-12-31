@@ -4,11 +4,11 @@
   grid-row-gap: spacing(xxx-small);
   grid-template-columns: repeat(12, 1fr);
 
-  @include respond-to(medium) {
+  @include breakpoint(medium) {
     grid-column-gap: spacing(x-small);
   }
 
-  @include respond-to(small) {
+  @include breakpoint(small) {
     grid-column-gap: spacing(xxx-small);
   }
 }
@@ -19,7 +19,7 @@
   }
 }
 
-@include respond-to(medium) {
+@include breakpoint(medium) {
   @for $i from 1 through 12 {
     .u-grid__column--#{$i}\@medium {
       grid-column-end: span $i;
@@ -27,7 +27,7 @@
   }
 }
 
-@include respond-to(small) {
+@include breakpoint(small) {
   @for $i from 1 through 12 {
     .u-grid__column--#{$i}\@small {
       grid-column-end: span $i;
@@ -56,7 +56,7 @@
 //   }
 // }
 
-// @include respond-to(medium) {
+// @include breakpoint(medium) {
 //   @for $i from 1 through 12 {
 //     .u-grid__column--#{$i}\@medium {
 //       margin-right: spacing(small);
@@ -71,7 +71,7 @@
 //   }
 // }
 
-// @include respond-to(small) {
+// @include breakpoint(small) {
 //   @for $i from 1 through 12 {
 //     .u-grid__column--#{$i}\@small {
 //       margin-right: spacing(x-small);

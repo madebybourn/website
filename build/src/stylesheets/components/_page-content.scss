@@ -1,11 +1,11 @@
 .c-page-content {
 	@include padding(0 $global-side-spacing spacing(xx-large));
 
-	@include respond-to(medium) {
+	@include breakpoint(medium) {
 		@include padding(0 $global-side-spacing-medium spacing(x-large));
 	}
 
-	@include respond-to(small) {
+	@include breakpoint(small) {
 		@include padding(0 $global-side-spacing-small spacing(large));
 	}
 }
