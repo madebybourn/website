@@ -1,3 +1,40 @@
+$venture-latest-bubble-size: 65px;
+$venture-latest-bubble-size-small: 55px;
+
+.c-venture {
+  position: relative;
+}
+
 .c-venture + .c-venture {
   margin-top: spacing(x-large);
+}
+
+.c-venture__info {
+  position: relative;
+}
+
+.c-venture__latest {
+  @include size($venture-latest-bubble-size);
+  align-items: center;
+  background-color: $color-ventures;
+  border-radius: 100%;
+  color: $white;
+  display: flex;
+  font-family: $base-font-family-medium;
+  font-size: modular-scale(-4);
+  font-weight: $medium-font-weight;
+  justify-content: center;
+  position: absolute;
+  line-height: 1.35;
+  right: -$venture-latest-bubble-size;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  transform: rotate(-25deg) translateY(-50%);
+
+  @include breakpoint(small) {
+    @include size($venture-latest-bubble-size-small);
+    right: 0;
+    top: -($venture-latest-bubble-size / 2);
+  }
 }
