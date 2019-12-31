@@ -3,19 +3,19 @@ $page-intro-top-padding-medium: 150px;
 $page-intro-top-padding-small: 100px;
 
 .c-page-intro {
-    @include padding($page-intro-top-padding $global-side-spacing);
+  @include padding($page-intro-top-padding $global-side-spacing);
 
-    @include respond-to(medium) {
-        @include padding($page-intro-top-padding-medium $global-side-spacing-medium);
-    }
+  @include respond-to(medium) {
+    @include padding($page-intro-top-padding-medium $global-side-spacing-medium);
+  }
 
-    @include respond-to(small) {
-        @include padding($page-intro-top-padding-small $global-side-spacing-small);
-    }
+  @include respond-to(small) {
+    @include padding($page-intro-top-padding-small $global-side-spacing-small);
+  }
 }
 
 .c-page-intro__content {
-    max-width: 860px;
+  max-width: 860px;
 }
 
 .c-page-intro__heading {
@@ -23,7 +23,7 @@ $page-intro-top-padding-small: 100px;
 }
 
 .c-page-intro__subheading {
-    @extend h2;
-    color: $medium-gray;
-    margin-top: spacing(xx-small);
+  @extend h2;
+  color: $medium-gray;
+  margin-top: spacing(xx-small);
 }

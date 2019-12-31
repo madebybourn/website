@@ -1,22 +1,22 @@
 .c-client + .c-client {
-    margin-top: spacing(medium);
+  margin-top: spacing(medium);
 }
 
 .c-client__info {
-    font-size: modular-scale(0);
+  font-size: modular-scale(0);
 }
 
 .c-client__tags {
-    margin-top: spacing(xxx-small);
+  margin-top: spacing(xxx-small);
 }
 
 .c-client__tag {
-    &::after {
-        content: ", ";
-    }
+  &::after {
+    content: ", ";
+  }
 
-    &:only-child::after,
-    &:last-child::after {
-        content: "";
-    }
+  &:only-child::after,
+  &:last-child::after {
+    content: "";
+  }
 }

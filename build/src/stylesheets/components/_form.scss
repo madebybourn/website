@@ -1,19 +1,19 @@
 .c-form__field-group {
-    display: flex;
+	display: flex;
 }
 
 .c-form__field-group + .c-form__field-group {
-    margin-top: spacing(x-small);
+	margin-top: spacing(x-small);
 }
 
 .c-form__field {
-    width: 100%;
+	width: 100%;
 }
 
 .c-form__field + .c-form__field {
-    margin-left: spacing(x-small);
+	margin-left: spacing(x-small);
 }
 
 .c-form__button-group {
-    margin-top: spacing(medium);
+	margin-top: spacing(medium);
 }

@@ -1,62 +1,62 @@
 .c-nav {
-    margin-left: spacing(large);
+  margin-left: spacing(large);
 }
 
 .c-nav__items {
-    align-items: center;
-    display: flex;
+  align-items: center;
+  display: flex;
 }
 
 .c-nav__item {
-    font-size: modular-scale(-1);
-    line-height: 1.1;
+  font-size: modular-scale(-1);
+  line-height: 1.1;
 }
 
 .c-nav__link {
-    &:link,
-    &:visited  {
-        &::after {
-            background-color: transparent;
-        }
+  &:link,
+  &:visited  {
+    &::after {
+      background-color: transparent;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &.is-active {
+    &.c-nav__link--ventures {
+      color: $color-ventures;
+
+      &::after {
+        background-color: $color-ventures;
+      }
     }
 
-    &:hover,
-    &:active,
-    &.is-active {
-        &.c-nav__link--ventures {
-            color: $color-ventures;
+    &.c-nav__link--consulting {
+      color: $color-consulting;
 
-            &::after {
-                background-color: $color-ventures;
-            }
-        }
-
-        &.c-nav__link--consulting {
-            color: $color-consulting;
-
-            &::after {
-                background-color: $color-consulting;
-            }
-        }
-
-        &.c-nav__link--thoughts {
-            color: $color-thoughts;
-
-            &::after {
-                background-color: $color-thoughts;
-            }
-        }
-
-        &.c-nav__link--about {
-            color: $color-about;
-
-            &::after {
-                background-color: $color-about;
-            }
-        }
+      &::after {
+        background-color: $color-consulting;
+      }
     }
+
+    &.c-nav__link--thoughts {
+      color: $color-thoughts;
+
+      &::after {
+        background-color: $color-thoughts;
+      }
+    }
+
+    &.c-nav__link--about {
+      color: $color-about;
+
+      &::after {
+        background-color: $color-about;
+      }
+    }
+  }
 }
 
 .c-nav__item + .c-nav__item {
-    margin-left: spacing(small);
+  margin-left: spacing(small);
 }

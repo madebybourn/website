@@ -1,29 +1,29 @@
 .c-service {
-    @include padding(spacing(xx-small) spacing(xx-small) spacing(xxx-small));
-    border: $base-border;
-    border-radius: $base-border-radius;
-    position: relative;
+  @include padding(spacing(xx-small) spacing(xx-small) spacing(xxx-small));
+  border: $base-border;
+  border-radius: $base-border-radius;
+  position: relative;
 
-    &::before {
-        background-color: $color-consulting;
-        content: "";
-        height: 1px;
-        left: 0;
-        position: absolute;
-        top: -1px;
-        width: 100%;
-    }
+  &::before {
+    background-color: $color-consulting;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: -1px;
+    width: 100%;
+  }
 }
 
 .c-service__category {
-    @include padding(null null spacing(medium));
-    color: $medium-gray;
-    font-size: modular-scale(0);
+  @include padding(null null spacing(medium));
+  color: $medium-gray;
+  font-size: modular-scale(0);
 }
 
 .c-service__options {
-    color: $light-gray;
-    font-size: modular-scale(-2);
-    line-height: 1.66;
-    padding-bottom: spacing(xxxx-small);
+  color: $light-gray;
+  font-size: modular-scale(-2);
+  line-height: 1.66;
+  padding-bottom: spacing(xxxx-small);
 }

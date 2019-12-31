@@ -1,19 +1,19 @@
 <header class="c-header" data-header>
-    <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
-    <nav class="c-nav">
-        <ul class="c-nav__items">
-            {% for entry in craft.entries.section('header').all() %}
-            <li class="c-nav__item">
-                <a href="{{ entry.navItemLink.one().url }}"
-                   data-slug="{{ entry.slug }}"
-                   class="c-nav__link c-nav__link--{{ entry.slug }} {% if craft.app.request.segments|first == entry.slug %}is-active{% endif %}">
-                   {{ entry.navItemText }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-    </nav>
-    <!-- <div class="hamburger">
-        <span></span><span></span><span></span>
+  <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
+  <nav class="c-nav">
+    <ul class="c-nav__items">
+      {% for entry in craft.entries.section('header').all() %}
+      <li class="c-nav__item">
+        <a href="{{ entry.navItemLink.one().url }}"
+        data-slug="{{ entry.slug }}"
+        class="c-nav__link c-nav__link--{{ entry.slug }} {% if craft.app.request.segments|first == entry.slug %}is-active{% endif %}">
+          {{ entry.navItemText }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <!-- <div class="hamburger">
+      <span></span><span></span><span></span>
     </div> -->
 </header>

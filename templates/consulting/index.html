@@ -2,112 +2,112 @@
 
 {% block content %}
 
-    {% include "components/_page-intro.html" with { intro: entry } %}
+  {% include "components/_page-intro.html" with { intro: entry } %}
 
-    <section class="c-page-content">
-        <section class="c-page-content__section">
-            <h2 class="u-hidden">Services</h2>
-            <div class="c-services u-grid">
-                {% for service in entry.consultingServices.all() %}
-                    <div class="u-grid__column--4">
-                        {% include "components/_service.html" %}
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
-        <section class="c-page-content__section">
-            <div class="u-grid">
-                <div class="u-grid__column--3">
-                    <h2>{{entry.consultingClientsHeading}}</h2>
-                </div>
-                <div class="u-grid__column--6">
-                    {% for client in entry.consultingClientsSelect.all() %}
-                        {% include "components/_client.html" %}
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-        <section class="c-page-content__section">
-            <div class="u-grid">
-                <div class="u-grid__column--3">
-                    <div class="c-consulting-contact__heading">
-                        <h2>{{entry.consultingContactHeading}}</h2>
-                    </div>
-                </div>
-                <div class="u-grid__column--6">
-                    <div class="c-consulting-contact__description">
-                        {{entry.consultingContactDescription}}
-                    </div>
-                    <div class="c-consulting-contact__form">
-                        {% macro errorList(errors) %}
-                            {% if errors %}
-                                <ul class="errors">
-                                    {% for error in errors %}
-                                        <li>{{ error }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
-                        {% endmacro %}
-
-                        {% from _self import errorList %}
-
-                        <form class="c-form" method="post" action="" accept-charset="UTF-8">
-                            {{ csrfInput() }}
-                            <input type="hidden" name="action" value="contact-form/send">
-                            <input type="hidden" name="subject" value="Consulting Inquiry">
-
-                            <!-- {{ redirectInput('contact/thanks') }} -->
-                            {% if craft.app.session.hasFlash('notice') %}
-                                <p class="message notice">{{ craft.app.session.getFlash('notice') }}</p>
-                            {% elseif craft.app.session.hasFlash('error') %}
-                                <p class="message error">{{ craft.app.session.getFlash('error') }}</p>
-                            {% endif %}
-
-                            <div class="c-form__field-group">
-                                <div class="c-form__field">
-                                    <label for="first-name">First Name</label>
-                                    <input id="first-name" type="text" name="message[firstName]" value="{{ message.message.firstName ?? '' }}">
-                                    {{ message is defined and message ? errorList(message.getErrors('message]')) }}
-                                </div>
-                                <div class="c-form__field">
-                                    <label for="last-name">Last Name</label>
-                                    <input id="last-name" type="text" name="message[lastName]" value="{{ message.message.lastName ?? '' }}">
-                                    {{ message is defined and message ? errorList(message.getErrors('message')) }}
-                                </div>
-                            </div>
-
-                            <!-- <div class="c-form__field-group">
-                                <div class="c-form__field">
-                                    <label for="from-name">From Name</label>
-                                    <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
-                                    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
-                                </div>
-                           </div> -->
-
-                            <div class="c-form__field-group">
-                                <div class="c-form__field">
-                                    <label for="from-email">Email</label>
-                                    <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
-                                    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
-                                </div>
-                            </div>
-
-                            <div class="c-form__field-group">
-                                <div class="c-form__field">
-                                    <label for="message">Tell us more about your idea and needs.</label>
-                                    <textarea rows="10" cols="40" id="message" name="message[body]">{{ message.message.body ?? '' }}</textarea>
-                                    {{ message is defined and message ? errorList(message.getErrors('message')) }}
-                                </div>
-                            </div>
-
-                            <div class="c-form__button-group">
-                                <button type="submit" class="c-form__button">Send Inquiry</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="c-page-content">
+    <section class="c-page-content__section">
+      <h2 class="u-hidden">Services</h2>
+      <div class="c-services u-grid">
+        {% for service in entry.consultingServices.all() %}
+        <div class="u-grid__column--4">
+          {% include "components/_service.html" %}
+        </div>
+        {% endfor %}
+      </div>
     </section>
+    <section class="c-page-content__section">
+      <div class="u-grid">
+        <div class="u-grid__column--3">
+          <h2>{{entry.consultingClientsHeading}}</h2>
+        </div>
+        <div class="u-grid__column--6">
+          {% for client in entry.consultingClientsSelect.all() %}
+          {% include "components/_client.html" %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <section class="c-page-content__section">
+      <div class="u-grid">
+        <div class="u-grid__column--3">
+          <div class="c-consulting-contact__heading">
+            <h2>{{entry.consultingContactHeading}}</h2>
+          </div>
+        </div>
+        <div class="u-grid__column--6">
+          <div class="c-consulting-contact__description">
+            {{entry.consultingContactDescription}}
+          </div>
+          <div class="c-consulting-contact__form">
+            {% macro errorList(errors) %}
+            {% if errors %}
+            <ul class="errors">
+              {% for error in errors %}
+              <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            {% endmacro %}
+
+            {% from _self import errorList %}
+
+            <form class="c-form" method="post" action="" accept-charset="UTF-8">
+              {{ csrfInput() }}
+              <input type="hidden" name="action" value="contact-form/send">
+              <input type="hidden" name="subject" value="Consulting Inquiry">
+
+              <!-- {{ redirectInput('contact/thanks') }} -->
+              {% if craft.app.session.hasFlash('notice') %}
+              <p class="message notice">{{ craft.app.session.getFlash('notice') }}</p>
+              {% elseif craft.app.session.hasFlash('error') %}
+              <p class="message error">{{ craft.app.session.getFlash('error') }}</p>
+              {% endif %}
+
+              <div class="c-form__field-group">
+                <div class="c-form__field">
+                  <label for="first-name">First Name</label>
+                  <input id="first-name" type="text" name="message[firstName]" value="{{ message.message.firstName ?? '' }}">
+                  {{ message is defined and message ? errorList(message.getErrors('message]')) }}
+                </div>
+                <div class="c-form__field">
+                  <label for="last-name">Last Name</label>
+                  <input id="last-name" type="text" name="message[lastName]" value="{{ message.message.lastName ?? '' }}">
+                  {{ message is defined and message ? errorList(message.getErrors('message')) }}
+                </div>
+              </div>
+
+              <!-- <div class="c-form__field-group">
+                <div class="c-form__field">
+                    <label for="from-name">From Name</label>
+                    <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+                    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+                </div>
+              </div> -->
+
+              <div class="c-form__field-group">
+                <div class="c-form__field">
+                  <label for="from-email">Email</label>
+                  <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+                  {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+                </div>
+              </div>
+
+              <div class="c-form__field-group">
+                <div class="c-form__field">
+                  <label for="message">Tell us more about your idea and needs.</label>
+                  <textarea rows="10" cols="40" id="message" name="message[body]">{{ message.message.body ?? '' }}</textarea>
+                  {{ message is defined and message ? errorList(message.getErrors('message')) }}
+                </div>
+              </div>
+
+              <div class="c-form__button-group">
+                <button type="submit" class="c-form__button">Send Inquiry</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
 
 {% endblock %}

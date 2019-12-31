@@ -1,29 +1,29 @@
 .c-footer {
-    @include padding(spacing(x-small) $global-side-spacing);
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    font-size: modular-scale(-1);
+  @include padding(spacing(x-small) $global-side-spacing);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: modular-scale(-1);
 }
 
 .c-footer__left,
 .c-footer__right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .c-footer__item {
-    color: $light-gray;
-    display: block;
-    font-size: modular-scale(-1);
-    line-height: 1.1;
+  color: $light-gray;
+  display: block;
+  font-size: modular-scale(-1);
+  line-height: 1.1;
 }
 
 .c-footer__item + .c-footer__item {
-    margin-left: spacing(small);
+  margin-left: spacing(small);
 }
 
 .c-footer__item--copyright {
-    font-family: $base-font-family-medium;
-    font-weight: $medium-font-weight;
+  font-family: $base-font-family-medium;
+  font-weight: $medium-font-weight;
 }
