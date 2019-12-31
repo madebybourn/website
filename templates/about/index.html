@@ -1,18 +1,23 @@
 {% extends "_layout" %}
+{% set title = entry.title %}
 
 {% block content %}
 
-	{% include "components/_page-intro.html" with { intro: entry } %}
+{% include "components/_page-intro.html" with { intro: entry } %}
 
-	<section class="c-page-content">
-	  <div class="u-grid">
-	    <div class="u-grid__column--3">
-	      <h2>{{entry.aboutFounderTitle}}</h2>
-	    </div>
-	    <div class="u-grid__column--7">
-	      {{entry.aboutFounderBio}}
-	    </div>
-	  </div>
-	</section>
+<section class="c-page-content">
+	<div class="u-grid">
+		<div class="u-grid__column--3 
+								u-grid__column--4@medium 
+								u-grid__column--12@small">
+			<h2>{{entry.aboutFounderTitle}}</h2>
+		</div>
+		<div class="u-grid__column--7 
+								u-grid__column--8@medium 
+								u-grid__column--12@small">
+			{{entry.aboutFounderBio}}
+		</div>
+	</div>
+</section>
 
 {% endblock %}

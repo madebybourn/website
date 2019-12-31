@@ -1,32 +1,28 @@
 .u-grid {
-  // @include clearfix;
-  display: flex;
+  display: grid;
+  grid-column-gap: spacing(medium);
+  grid-row-gap: spacing(xxx-small);
+  grid-template-columns: repeat(12, 1fr);
+
+  @include respond-to(medium) {
+    grid-column-gap: spacing(x-small);
+  }
+
+  @include respond-to(small) {
+    grid-column-gap: spacing(xxx-small);
+  }
 }
-  
+
 @for $i from 1 through 12 {
   .u-grid__column--#{$i} {
-  //   float: left;
-    margin-right: spacing(medium);
-    width: percentage($i / 12);
-  }
-  
-
-  div.u-grid__column--#{$i}:only-child,
-  div.u-grid__column--#{$i}:last-child {
-    margin-right: 0;
+    grid-column-end: span $i;
   }
 }
 
 @include respond-to(medium) {
   @for $i from 1 through 12 {
     .u-grid__column--#{$i}\@medium {
-      margin-right: spacing(small);
-      width: percentage($i / 12);
-    }
-
-    div.u-grid__column--#{$i}\@medium:only-child,
-    div.u-grid__column--#{$i}\@medium:last-child {
-      margin-right: 0;
+      grid-column-end: span $i;
     }
   }
 }
@@ -34,14 +30,59 @@
 @include respond-to(small) {
   @for $i from 1 through 12 {
     .u-grid__column--#{$i}\@small {
-      margin-right: spacing(x-small);
-      width: percentage($i / 12);
-    }
-
-    div.u-grid__column--#{$i}\@small:only-child,
-    div.u-grid__column--#{$i}\@small:last-child {
-      margin-right: 0;
+      grid-column-end: span $i;
     }
   }
 }
+
+// FLEXBOX
+// .u-grid {
+//   // @include clearfix;
+//   display: flex;
+//   // flex-wrap: wrap;
+// }
+  
+// @for $i from 1 through 12 {
+//   .u-grid__column--#{$i} {
+//   //   float: left;
+//     margin-right: spacing(medium);
+//     width: percentage($i / 12);
+//   }
+  
+//   div.u-grid__column--#{$i}:only-child,
+//   div.u-grid__column--#{$i}:last-child,
+//   div.u-grid__column--12 {
+//     margin-right: 0;
+//   }
+// }
+
+// @include respond-to(medium) {
+//   @for $i from 1 through 12 {
+//     .u-grid__column--#{$i}\@medium {
+//       margin-right: spacing(small);
+//       width: percentage($i / 12);
+//     }
+
+//     div.u-grid__column--#{$i}\@medium:only-child,
+//     div.u-grid__column--#{$i}\@medium:last-child,
+//     div.u-grid__column--12\@medium {
+//       margin-right: 0;
+//     }
+//   }
+// }
+
+// @include respond-to(small) {
+//   @for $i from 1 through 12 {
+//     .u-grid__column--#{$i}\@small {
+//       margin-right: spacing(x-small);
+//       width: percentage($i / 12);
+//     }
+
+//     div.u-grid__column--#{$i}\@small:only-child,
+//     div.u-grid__column--#{$i}\@small:last-child,
+//     div.u-grid__column--12\@small {
+//       margin-right: 0;
+//     }
+//   }
+// }
   

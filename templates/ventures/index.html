@@ -1,15 +1,16 @@
 {% extends "_layout" %}
+{% set title = entry.title %}
 
 {% block content %}
 
-	{% include "components/_page-intro.html" with { intro: entry } %}
+{% include "components/_page-intro.html" with { intro: entry } %}
 
-	<section class="c-page-content">
-		<div class="c-ventures">
-			{% for venture in craft.entries.section('ventures').orderBy('ventureLaunchDate desc').all() %}
+<section class="c-page-content">
+	<div class="c-ventures">
+		{% for venture in craft.entries.section('ventures').orderBy('ventureLaunchDate desc').all() %}
 			{% include "components/_venture.html" %}
-			{% endfor %}
-		</div>
-	</section>
+		{% endfor %}
+	</div>
+</section>
 
 {% endblock %}

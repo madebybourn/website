@@ -2,11 +2,10 @@
   <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
   <nav class="c-nav">
     <ul class="c-nav__items">
-      {% for entry in craft.entries.section('header').all() %}
+      {% for entry in craft.entries.section('mainNavigation').all() %}
       <li class="c-nav__item">
-        <a href="{{ entry.navItemLink.one().url }}"
-        data-slug="{{ entry.slug }}"
-        class="c-nav__link c-nav__link--{{ entry.slug }} {% if craft.app.request.segments|first == entry.slug %}is-active{% endif %}">
+        <a href="{{ entry.navItemLink.one().url }}" data-slug="{{ entry.slug }}"
+          class="c-nav__link c-nav__link--{{ entry.slug }} {% if craft.app.request.segments|first == entry.slug %}is-active{% endif %}">
           {{ entry.navItemText }}
         </a>
       </li>

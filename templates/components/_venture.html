@@ -1,11 +1,17 @@
 <div class="c-venture u-grid">
-	<div class="u-grid__column--3">
+	<div class="u-grid__column--4 
+							u-grid__column--4@medium 
+							u-grid__column--12@small">
 		<h2>{{venture.ventureName}}</h2>
 	</div>
-	<div class="u-grid__column--7">
+	<div class="u-grid__column--7 
+							u-grid__column--8@medium 
+							u-grid__column--12@small">
 		<p>{{venture.ventureDescription}}</p>
 		<div class="c-venture__tags c-tags">
-			<small class="c-venture__tag c-tag">LAUNCHED {{venture.ventureLaunchDate|date_modify("+1 day")|date("m.d.Y")}}</small>
+			<small class="c-venture__tag c-tag">
+				LAUNCHED {{venture.ventureLaunchDate|date_modify("+1 day")|date("m.d.Y")}}
+			</small>
 		</div>
 	</div>
 </div>
