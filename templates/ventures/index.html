@@ -10,33 +10,9 @@
 
     <section class="c-page-content">
         <div class="c-ventures">
-            <div class="c-venture u-grid">
-                <div class="u-grid__column--3">
-                    <h2>You & Sundry</h2>
-                </div>
-                <div class="u-grid__column--7">
-                    <p>The first social club for the LGBTQ+ community.</p>
-                    <small class="c-venture__tag c-tag">LAUNCHED 03.12.2018</small>
-                </div>
-            </div>
-            <div class="c-venture u-grid">
-                <div class="u-grid__column--3">
-                    <h2>Bitter Renter</h2>
-                </div>
-                <div class="u-grid__column--7">
-                    <p>An interactive guide for first-time renters in NYC.</p>
-                    <small class="c-venture__tag c-tag">LAUNCHED 03.12.2018</small>
-                </div>
-            </div>
-            <div class="c-venture u-grid">
-                <div class="u-grid__column--3">
-                    <h2>conferCal</h2>
-                </div>
-                <div class="u-grid__column--7">
-                    <p>A conference calendar for people in tech.</p>
-                    <small class="c-venture__tag c-tag">LAUNCHED 03.12.2018</small>
-                </div>
-            </div>
+            {% for venture in craft.entries.section('ventures').orderBy('ventureLaunchDate desc').all() %}
+                {% include "components/_venture.html" %}
+            {% endfor %}
         </div>
     </section>
 
