@@ -26,3 +26,15 @@
   @include size($width, $height);
   transform: translate(-50%, -50%);
 }
+
+@mixin global-side-padding() {
+		@include padding(null $global-side-spacing);
+
+	@include breakpoint(medium) {
+		@include padding(null $global-side-spacing-medium);
+	}
+
+	@include breakpoint(small) {
+		@include padding(null $global-side-spacing-small);
+	}
+}

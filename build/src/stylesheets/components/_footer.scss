@@ -1,15 +1,30 @@
 .c-footer {
-  @include padding(spacing(x-small) $global-side-spacing);
+  @include global-side-padding();
+  @include padding(spacing(x-small) null);
   align-items: center;
   display: flex;
   justify-content: space-between;
   font-size: modular-scale(-1);
+
+	@include breakpoint(small) {
+    display: block;
+	}
 }
 
 .c-footer__left,
 .c-footer__right {
   display: flex;
   align-items: center;
+
+	@include breakpoint(small) {
+    justify-content: space-between;
+	}
+}
+
+.c-footer__right {
+	@include breakpoint(small) {
+    display: none;
+  }
 }
 
 .c-footer__item {
