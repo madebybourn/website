@@ -44,9 +44,9 @@ return [
     'staging' => [
         // Set this to `false` to prevent administrative changes from being made on staging
         'allowAdminChanges' => true,
-        'siteUrl' => "//madebybourn-staging.frb.io",
+        'siteUrl' => "//madebybourn-stag.frb.io",
         'aliases' => [
-            '@assetBaseUrl' => "//madebybourn-staging.frb.io/uploads",
+            '@assetBaseUrl' => "//madebybourn-stag.frb.io/uploads",
             '@assetBasePath' => "uploads",
         ],
     ],
