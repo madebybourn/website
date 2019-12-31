@@ -1,0 +1,58 @@
+.u-link {
+  color: currentColor;
+
+    &.u-link--ventures::after {
+        background-color: $color-ventures;
+    }
+
+    &.u-link--consulting::after {
+        background-color: $color-consulting;
+    }
+
+    &.u-link--thoughts::after {
+        background-color: $color-thoughts;
+    }
+
+    &.u-link--about::after {
+        background-color: $color-about;
+    }
+
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $dark-gray;
+
+        &.u-link--ventures {
+        color: $color-ventures;
+
+            &::after {
+                background-color: $color-ventures;
+            }
+        }
+
+        &.u-link--consulting {
+            color: $color-consulting;
+
+            &::after {
+                background-color: $color-consulting;
+            }
+        }
+        
+        &.u-link--thoughts {
+            color: $color-thoughts;
+
+            &::after {
+                background-color: $color-thoughts;
+            }
+        }
+
+        &.u-link--about {
+            color: $color-about;
+
+            &::after {
+                background-color: $color-about;
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.c-combo__name,
+.c-combo__description {
+    display: inline;
+}
+
+.c-combo__name {
+    font-size: inherit;
+    font-family: $base-font-family-bold;
+    font-weight: $bold-font-weight;
+}

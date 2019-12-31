@@ -24,24 +24,32 @@
     &:active,
     &.is-active {
         &.c-nav__link--ventures {
+            color: $color-ventures;
+
             &::after {
                 background-color: $color-ventures;
             }
         }
 
         &.c-nav__link--consulting {
+            color: $color-consulting;
+
             &::after {
                 background-color: $color-consulting;
             }
         }
 
         &.c-nav__link--thoughts {
+            color: $color-thoughts;
+
             &::after {
                 background-color: $color-thoughts;
             }
         }
 
         &.c-nav__link--about {
+            color: $color-about;
+
             &::after {
                 background-color: $color-about;
             }

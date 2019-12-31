@@ -1,8 +1,8 @@
 <div class="c-client">
-    <div class="c-client__info">
-        <h3 class="c-client__name">{{client.clientName}}</h3>
+    <div class="c-combo c-client__info">
+        <h3 class="c-combo__name c-client__name">{{client.clientName}}</h3>
         <span> - </span>
-        <p class="c-client__description">{{client.clientDescription}}</p>
+        <p class="c-combo__description c-client__description">{{client.clientDescription}}</p>
     </div>
     {% if client.clientIndustryTags.count() > 0 %}
     <div class="c-client__tags c-tags">

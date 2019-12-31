@@ -92,23 +92,39 @@ a {
   &:hover {
     color: $dark-gray;
 
+    .u-page--ventures & {
+      color: $color-ventures;
+    }
+
+    .u-page--consulting & {
+      color: $color-consulting;
+    }
+
+    .u-page--thoughts & {
+      color: $color-thoughts;
+    }
+
+    .u-page--about & {
+      color: $color-about;
+    }
+
     &::after {
       background-color: $dark-gray;
       
       .u-page--ventures & {
-          background-color: $color-ventures;
+        background-color: $color-ventures;
       }
 
       .u-page--consulting & {
-          background-color: $color-consulting;
+        background-color: $color-consulting;
       }
 
       .u-page--thoughts & {
-          background-color: $color-thoughts;
+        background-color: $color-thoughts;
       }
 
       .u-page--about & {
-          background-color: $color-about;
+        background-color: $color-about;
       }
     }
   }
@@ -125,6 +141,9 @@ a {
 
   p &,
   li & {
+    &::after {
+      background-color: $dark-gray;
+    }
     // border-bottom: solid 1px $dark-gray;
     // color: $dark-gray;
     // padding-bottom: 3px;
