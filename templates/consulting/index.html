@@ -2,12 +2,7 @@
 
 {% block content %}
 
-    <section class="c-page-intro">
-        <div class="c-page-intro__content">
-            <h1 class="c-page-intro__heading">{{entry.pageHeading}}</h1>
-            <p class="c-page-intro__subheading">{{entry.pageSubheading}}</p>
-        </div>
-    </section>
+    {% include "components/_page-intro.html" with { intro: entry } %}
 
     <section class="c-page-content">
         <section class="c-page-content__section">

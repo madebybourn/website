@@ -21,16 +21,14 @@
 
 {% block content %}
 
-    <section class="c-page-intro">
-        <div class="c-page-intro__content">
-            <h1>We launch ideas.</h1>
-            <p>For ourselves. For others.</p>
-        </div>
-    </section>
+    {% include "components/_page-intro.html" with { intro: entry } %}
 
     <section class="c-page-content">
-        <p>Recent launch: You & Sundry is a social club for the LGBTQ+ community.</p>
-        <p>Latest thoughts: Is my identity related to my fundraising journey?</p>
+        <div class="c-updates">
+            {% for update in entry.homeUpdates.all() %}
+                {% include "components/_update.html" %}
+            {% endfor %}
+        </div>
     </section>
 
 {% endblock %}

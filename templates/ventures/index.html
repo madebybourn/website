@@ -2,12 +2,8 @@
 
 {% block content %}
 
-    <section class="c-page-intro">
-        <div class="c-page-intro__content">
-            <h1 class="c-page-intro__heading">{{entry.pageHeading}}</h1>
-        </div>
-    </section>
-
+    {% include "components/_page-intro.html" with { intro: entry } %}
+    
     <section class="c-page-content">
         <div class="c-ventures">
             {% for venture in craft.entries.section('ventures').orderBy('ventureLaunchDate desc').all() %}
