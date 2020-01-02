@@ -9,6 +9,11 @@
  # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
  #}
 
+{% set requestFirstSegment = craft.app.request.segments|first %}
+{% if craft.app.request.url == "/"%}
+  {% set requestFirstSegment = entry.slug|replace('-page','') %}
+{% endif %}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 
@@ -66,9 +71,9 @@
 
 </head>
 
-<body class="u-page--{{ craft.app.request.segments|first }}">
+<body class="u-page--{{ requestFirstSegment }}">
 
-  {% if craft.app.request.segments|first != 'browser-support' %}
+  {% if requestFirstSegment != 'browser-support' %}
   <!-- header -->
   {% endif %}
 
