@@ -1,3 +1,8 @@
+{% set request = craft.app.request.segments|first %}
+{% if craft.app.request.url == "/"%}
+  {% set request = entry.slug|replace('-page','') %}
+{% endif %}
+
 <header class="c-header" data-header>
   <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
   <nav class="c-nav" data-nav>
@@ -5,7 +10,7 @@
       {% for entry in craft.entries.section('mainNavigation').all() %}
       <li class="c-nav__item">
         <a href="{{ entry.navItemLink.one().url }}" data-slug="{{ entry.slug }}"
-          class="c-nav__link c-nav__link--{{ entry.slug }} {% if craft.app.request.segments|first == entry.slug %}is-active{% endif %}">
+          class="c-nav__link c-nav__link--{{ entry.slug }} {% if request == entry.slug %}is-active{% endif %}">
           {{ entry.navItemText }}
         </a>
       </li>
