@@ -13,6 +13,12 @@ $venture-latest-bubble-size-small: 55px;
   position: relative;
 }
 
+.c-venture__description {
+  @include breakpoint(small) {
+    @include padding(spacing(xxxx-small) null spacing(xxx-small));
+  }
+}
+
 .c-venture__latest {
   @include size($venture-latest-bubble-size);
   align-items: center;

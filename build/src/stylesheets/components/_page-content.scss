@@ -13,4 +13,14 @@
 
 .c-page-content__section + .c-page-content__section {
 	margin-top: spacing(xx-large);
+
+	@include breakpoint(small) {
+		margin-top: spacing(x-large);
+	}
+}
+
+.c-page-content__section-heading {
+	@include breakpoint(small) {
+		margin-bottom: spacing(x-small);
+	}
 }

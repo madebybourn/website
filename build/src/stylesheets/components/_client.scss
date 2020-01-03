@@ -1,5 +1,9 @@
 .c-client + .c-client {
   margin-top: spacing(medium);
+
+	@include breakpoint(small) {
+    margin-top: spacing(small);
+  }
 }
 
 .c-client__info {
