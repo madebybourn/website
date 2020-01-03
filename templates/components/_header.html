@@ -1,3 +1,5 @@
+{% set currentNavItem = craft.entries.section('mainNavigation').slug(requestFirstSegment).one() %}
+
 <header class="c-header" data-header>
   <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
   <nav class="c-nav" data-nav>
@@ -24,8 +26,11 @@
     </ul class="c-nav__mobile-items">
   </nav>
   <div class="c-hamburger" data-hamburger>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="c-hamburger__current-page u-color--{{currentNavItem.slug}}">{{currentNavItem.navItemText}}</span>
+    <div class="c-hamburger__icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </header>

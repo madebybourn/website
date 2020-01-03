@@ -7,32 +7,62 @@
   z-index: $highest-z-index;
 
   @include breakpoint(small) {
-    display: block;
+    align-items: center;
+    display: flex;
   }
+}
 
-  &.is-active span {
-    &:nth-child(1) {
-      transform: rotate(45deg) translate(3px,3px);
-      -webkit-transform: rotate(45deg) translate(3px,3px);
-      -moz-transform: rotate(45deg) translate(3px,3px);
-    }
-
-    &:nth-child(2) {
-      opacity: 0;
-    }
-
-    &:nth-child(3) {
-      transform: rotate(-45deg) translate(4px,-4px);
-      -webkit-transform: rotate(-45deg) translate(4px,-4px);
-      -moz-transform: rotate(-45deg) translate(4px,-4px);
-    }
-  }
-
+.c-hamburger__icon {
   span {
     display: block;
     width: 20px;
-    height:2px;
+    height: 1px;
     background-color: $dark-gray;
-    margin:3px 0;
+    margin: 4px 0;
+
+    .u-page--ventures & {
+      background-color: $color-ventures;
+    }
+
+    .u-page--consulting & {
+      background-color: $color-consulting;
+    }
+
+    .u-page--thoughts & {
+      background-color: $color-thoughts;
+    }
+
+    .u-page--about & {
+      background-color: $color-about;
+    }
+
+    .u-page--headstart & {
+      background-color: $color-products;
+    }
+
+    .c-hamburger.is-active & {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(3px,3px);
+        -webkit-transform: rotate(45deg) translate(3px,3px);
+        -moz-transform: rotate(45deg) translate(3px,3px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(4px,-4px);
+        -webkit-transform: rotate(-45deg) translate(4px,-4px);
+        -moz-transform: rotate(-45deg) translate(4px,-4px);
+      }
+    }
   }
+}
+
+.c-hamburger__current-page {
+  color: $light-gray;
+  font-size: modular-scale(-2);
+  margin-bottom: 1px;
+  padding-right: spacing(xxx-small);
 }
