@@ -9,6 +9,29 @@ $venture-latest-bubble-size-small: 55px;
   margin-top: spacing(x-large);
 }
 
+.c-venture__link {
+  display: block;
+  width: 100%;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    &::after {
+      content: none;
+      display: none;
+    }
+  }
+
+  &:hover,
+  &:active {
+    .c-venture__name,
+    .c-venture__description {
+      color: $color-ventures;
+    }
+  }
+}
+
 .c-venture__info {
   position: relative;
 }

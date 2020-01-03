@@ -1,24 +1,26 @@
-<div class="c-venture u-grid">
-	<div class="c-venture__name
-							u-grid__column--4 
-							u-grid__column--4@medium 
-							u-grid__column--12@small">
-		<h2>{{venture.ventureName}}</h2>
-	</div>
-	<div class="c-venture__info
-							u-grid__column--7 
-							u-grid__column--8@medium 
-							u-grid__column--12@small">
-		<p class="c-venture__description">{{venture.ventureDescription}}</p>
-		<div class="c-venture__tags c-tags">
-			<small class="c-venture__tag c-tag">
-				LAUNCHED {{venture.ventureLaunchDate|date_modify("+1 day")|date("m.d.Y")}}
-			</small>
+<div class="c-venture">
+	<a href="{{venture.ventureExternalLink}}" target="_blank" class="c-venture__link u-grid">
+		<div class="c-venture__heading
+								u-grid__column--4 
+								u-grid__column--4@medium 
+								u-grid__column--12@small">
+			<h2 class="c-venture__name">{{venture.ventureName}}</h2>
 		</div>
-		{% if loop.first %}
-			<div class="c-venture__latest">
-				<span>Latest Launch</span>
+		<div class="c-venture__info
+								u-grid__column--7 
+								u-grid__column--8@medium 
+								u-grid__column--12@small">
+			<p class="c-venture__description">{{venture.ventureDescription}}</p>
+			<div class="c-venture__tags c-tags">
+				<small class="c-venture__tag c-tag">
+					LAUNCHED {{venture.ventureLaunchDate|date_modify("+1 day")|date("m.d.Y")}}
+				</small>
 			</div>
-		{% endif %}
-	</div>
+			{% if loop.first %}
+				<div class="c-venture__latest">
+					<span>Latest Launch</span>
+				</div>
+			{% endif %}
+		</div>
+	</a>
 </div>
