@@ -51,18 +51,22 @@
         </div>
         <div class="c-consulting-contact__form">
 
-          <form class="c-form" method="post" action="" accept-charset="UTF-8" data-contact-form>
+          <form class="c-form"
+                method="post"
+                action=""
+                accept-charset="UTF-8"
+                data-contact-form
+                data-contact-form-success-message="{{entry.pageContactForm.type('form').one().formSuccessMessage}}">
             {{ csrfInput() }}
             <input type="hidden" name="action" value="contact-form/send">
 
-            <input type="hidden" name="subject" value="Consulting Inquiry">
-
             {% for field in entry.pageContactForm.type('formFields').all() %}
+              {% if field.fieldType == "hidden" %}
+              <input id="{{field.fieldName}}" type="{{field.fieldType}}" name="{{field.fieldName}}" value="{{field.fieldInitialValue}}">
+              {% else %}
               <div class="c-form__field-group">
                 <div class="c-form__field">
-                  {% if field.fieldType != "hidden" %}
                   <label for="{{field.fieldName}}">{{field.fieldLabel}}</label>
-                  {% endif %}
 
                   {% if field.fieldType == "textarea" %}
                   <textarea id="{{field.fieldName}}" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}"></textarea>
@@ -71,6 +75,7 @@
                   {% endif %}
                 </div>
               </div>
+              {% endif %}
             {% endfor %}
 
             <div class="c-form__button-group">

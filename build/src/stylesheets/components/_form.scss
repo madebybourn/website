@@ -48,3 +48,10 @@
 		}
 	}
 }
+
+.c-form__error {
+	color: red;
+	display: block;
+	font-size: modular-scale(-2);
+	margin-top: spacing(xxxx-small);
+}

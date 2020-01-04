@@ -22,6 +22,6 @@ Event::on(Submission::class, Submission::EVENT_AFTER_VALIDATE, function(Event $e
 
     // Make sure that `fromName` was filled in
     if (empty($submission->fromName)) {
-        $submission->addError('fromName', 'A name is required.');
+        $submission->addError('fromName', 'Your Name cannot be blank.');
     }
 });

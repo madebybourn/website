@@ -30,7 +30,7 @@ export default class ContactForm {
 
     request.done(function (response) {
       if (response.success) {
-        self.$contactFormResponse.html("<p class='c-form__response--success'>Your message has been sent!</p>").fadeIn();
+        self.$contactFormResponse.html("<p class='c-form__response--success'>" + self.$contactForm.attr("data-contact-form-success-message") +"</p>").fadeIn();
         self._resetForm();
         $('html,body').animate({
           scrollTop: self.$contactFormResponse.offset().top // - $('[data-header]').outerHeight()
@@ -40,7 +40,7 @@ export default class ContactForm {
         // e.g. response.error.fromName => ["From Name is required"]
         // alert("An error occurred. Please try again.");
         // console.log(response);
-        self.$contactFormResponse.html("<p class='c-form__response--error'>An error occurred. Please try again.</p>").fadeIn();
+        self.$contactFormResponse.html("<p class='c-form__response--error'>Oops something went wrong. Check for errors above.</p>").fadeIn();
         self._setErrors(response.errors);
         $('html,body').animate({
           scrollTop: self.$contactForm.offset().top - $('[data-header]').outerHeight() - 30
@@ -56,29 +56,34 @@ export default class ContactForm {
 
   _clearErrors() {
     this.$contactForm.find("input, textarea").removeAttr("data-error");
+    this.$contactForm.find("small.c-form__error").remove();
     this.$contactFormResponse.empty();
   }
 
   _setErrors(errors) {
     if (errors.firstName) {
       $("[name='message[firstName]']").attr("data-error", "");
+      $("[name='message[firstName]']").after("<small class='c-form__error'>"+errors.firstName+"</small>");
     }
 
     if (errors.lastName) {
       $("[name='message[lastName]']").attr("data-error", "");
+      $("[name='message[lastName]']").after("<small class='c-form__error'>" + errors.lastName + "</small>");
     }
 
     if (errors.fromName) {
       $("[name='fromName']").attr("data-error", "");
+      $("[name='fromName']").after("<small class='c-form__error'>" + errors.fromName + "</small>");
     }
 
     if (errors.fromEmail) {
       $("[name='fromEmail']").attr("data-error", "");
+      $("[name='fromEmail']").after("<small class='c-form__error'>" + errors.fromEmail + "</small>");
     }
 
     if (errors.message) {
-      $("[name='message']").attr("data-error", "");
-      $("[name='message[body]']").attr("data-error", "");
+      $("[name='message'], [name='message[body]']").attr("data-error", "");
+      $("[name='message'], [name='message[body]']").after("<small class='c-form__error'>" + errors.message + "</small>");
     }
   }
 
