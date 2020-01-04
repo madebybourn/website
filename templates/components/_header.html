@@ -26,7 +26,11 @@
     </ul class="c-nav__mobile-items">
   </nav>
   <div class="c-hamburger" data-hamburger>
-    <span class="c-hamburger__current-page u-color--{{currentNavItem.slug}}">{{currentNavItem.navItemText}}</span>
+    {% if currentNavItem is not null %}
+      <span class="c-hamburger__current-page u-color--{{currentNavItem.slug}}">{{currentNavItem.navItemText}}</span>
+    {% elseif entry.title is defined %}
+      <span class="c-hamburger__current-page">{{entry.title}}</span>
+    {% endif %}
     <div class="c-hamburger__icon">
       <span></span>
       <span></span>
