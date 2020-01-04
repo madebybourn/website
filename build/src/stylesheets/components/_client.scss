@@ -9,18 +9,3 @@
 .c-client__info {
   font-size: modular-scale(0);
 }
-
-.c-client__tags {
-  margin-top: spacing(xxx-small);
-}
-
-.c-client__tag {
-  &::after {
-    content: ", ";
-  }
-
-  &:only-child::after,
-  &:last-child::after {
-    content: "";
-  }
-}

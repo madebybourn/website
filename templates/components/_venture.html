@@ -13,8 +13,13 @@
 			<p class="c-venture__description">{{venture.ventureDescription}}</p>
 			<div class="c-venture__tags c-tags">
 				<small class="c-venture__tag c-tag">
-					LAUNCHED {{venture.ventureLaunchDate|date_modify("+1 day")|date("m.d.Y")}}
+					{{venture.ventureLaunchDate|date_modify("+1 day")|date("M Y")}}
 				</small>
+				{% if venture.ventureProjectTypeTags.count() > 0 %}
+					{% for tag in venture.ventureProjectTypeTags.all() %}
+					<small class="c-venture__tag c-tag">{{tag.title}}</small>
+					{% endfor %}
+				{% endif %}
 			</div>
 			{% if loop.first %}
 				<div class="c-venture__latest">
