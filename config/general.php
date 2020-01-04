@@ -29,7 +29,7 @@ return [
 
         'siteUrl' => getenv("DEFAULT_SITE_URL"),
         'aliases' => [
-            '@assetBaseUrl' => getenv("DEFAULT_SITE_URL") + "/uploads",
+            '@assetBaseUrl' => getenv("DEFAULT_SITE_URL") . "/uploads",
             '@assetBasePath' => "uploads",
         ],
     ],
