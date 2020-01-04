@@ -1,22 +1,13 @@
 .c-service {
   @include padding(spacing(xx-small) spacing(xx-small) spacing(xxx-small));
   border: $base-border;
+  border-top-color: $color-consulting;
   border-radius: $base-border-radius;
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  &::before {
-    background-color: $color-consulting;
-    content: "";
-    height: 1px;
-    left: 0;
-    position: absolute;
-    top: -1px;
-    width: 100%;
-  }
 }
 
 .c-service__category {
