@@ -30,13 +30,14 @@
         {% for field in entry.pageEmailCapture.type('emailCaptureFields') %}
           <div class="c-form__field-group">
             <div class="c-form__field">
+              {% if field.fieldType != "hidden" %}
               <label for="{{field.fieldName}}">{{field.fieldLabel}}</label>
-              {% if field.fieldType == "text" %}
-              <input id="{{field.fieldName}}" type="text" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}">
-              {% elseif field.fieldType == "email" %}
-              <input id="{{field.fieldName}}" type="email" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}">
-              {% elseif field.fieldType == "textarea" %}
+              {% endif %}
+
+              {% if field.fieldType == "textarea" %}
               <textarea id="{{field.fieldName}}" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}"></textarea>
+              {% else %}
+              <input id="{{field.fieldName}}" type="{{field.fieldType}}" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}">
               {% endif %}
             </div>
           </div>
