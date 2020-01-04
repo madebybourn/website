@@ -9,7 +9,7 @@
 
   <section class="c-page-content">
     {% if entry.pageInfo is defined %}
-      {% for info in entry.pageInfo %}
+      {% for info in entry.pageInfo.all() %}
         <div class="c-page-info">
           <div class="c-page-info__content">
             <h2 class="c-page-info__content-heading">{{info.heading}}</h2>
@@ -27,7 +27,7 @@
       <form class="c-form" method="post" action="{{entry.pageEmailCapture.type('emailCaptureForm').one().formActionUrl}}" accept-charset="UTF-8">
         {{ csrfInput() }}
 
-        {% for field in entry.pageEmailCapture.type('emailCaptureFields') %}
+        {% for field in entry.pageEmailCapture.type('emailCaptureFields').all() %}
           <div class="c-form__field-group">
             <div class="c-form__field">
               {% if field.fieldType != "hidden" %}

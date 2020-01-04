@@ -29,7 +29,7 @@
                   u-grid__column--8@medium 
                   u-grid__column--12@small">
         {% for client in entry.consultingClientsSelect.all() %}
-        {% include "components/_client.html" %}
+          {% include "components/_client.html" %}
         {% endfor %}
       </div>
     </div>
@@ -57,7 +57,7 @@
 
             <input type="hidden" name="subject" value="Consulting Inquiry">
 
-            {% for field in entry.pageContactForm.type('formFields') %}
+            {% for field in entry.pageContactForm.type('formFields').all() %}
               <div class="c-form__field-group">
                 <div class="c-form__field">
                   {% if field.fieldType != "hidden" %}
