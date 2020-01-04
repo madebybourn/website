@@ -54,32 +54,27 @@
           <form class="c-form" method="post" action="" accept-charset="UTF-8" data-contact-form>
             {{ csrfInput() }}
             <input type="hidden" name="action" value="contact-form/send">
+
             <input type="hidden" name="subject" value="Consulting Inquiry">
 
-            <div class="c-form__field-group">
-              <div class="c-form__field">
-                  <label for="from-name">Name</label>
-                  <input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
-              </div>
-            </div>
+            {% for field in entry.pageContactForm.type('formFields') %}
+              <div class="c-form__field-group">
+                <div class="c-form__field">
+                  {% if field.fieldType != "hidden" %}
+                  <label for="{{field.fieldName}}">{{field.fieldLabel}}</label>
+                  {% endif %}
 
-            <div class="c-form__field-group">
-              <div class="c-form__field">
-                <label for="from-email">Email Address</label>
-                <input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+                  {% if field.fieldType == "textarea" %}
+                  <textarea id="{{field.fieldName}}" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}"></textarea>
+                  {% else %}
+                  <input id="{{field.fieldName}}" type="{{field.fieldType}}" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}">
+                  {% endif %}
+                </div>
               </div>
-            </div>
-
-            <div class="c-form__field-group">
-              <div class="c-form__field">
-                <label for="message">Tell us more about your idea and needs.</label>
-                <textarea rows="10" cols="40" id="message"
-                  name="message[body]">{{ message.message.body ?? '' }}</textarea>
-              </div>
-            </div>
+            {% endfor %}
 
             <div class="c-form__button-group">
-              <button type="submit" class="c-form__button">Send Inquiry</button>
+              <button type="submit" class="c-form__button">{{entry.pageContactForm.type('form').one().formButtonText}}</button>
             </div>
             <div class="c-form__response" data-contact-form-response></div>
 

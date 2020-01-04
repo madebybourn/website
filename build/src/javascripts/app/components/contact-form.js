@@ -77,6 +77,7 @@ export default class ContactForm {
     }
 
     if (errors.message) {
+      $("[name='message']").attr("data-error", "");
       $("[name='message[body]']").attr("data-error", "");
     }
   }
