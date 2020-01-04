@@ -28,7 +28,7 @@ button {
 }
 
 #{$all-text-inputs} {
-  // appearance: none;
+  appearance: none;
   background-color: #F5F5F5;
   border: $form-base-border;
   border-radius: $base-border-radius;
