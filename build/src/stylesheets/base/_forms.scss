@@ -75,6 +75,15 @@ button {
   &::placeholder {
     color: tint($base-font-color, 40%);
   }
+
+  &[data-error] {
+    border-color: red;
+    
+    &:hover,
+    &:focus {
+      border-color: red;
+    }
+  }
 }
 
 textarea {
