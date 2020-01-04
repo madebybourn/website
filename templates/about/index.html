@@ -18,6 +18,11 @@
 			{{entry.aboutFounderBio}}
 		</div>
 	</div>
+	<div class="c-praises">
+		{% for praise in entry.pagePraise.type('praise').all() %}
+			{% include "components/_praise.html" %}
+		{% endfor %}
+	</div>
 </section>
 
 {% endblock %}

@@ -38,6 +38,12 @@ return [
     'dev' => [
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
+        'siteUrl' => "//local.madebybourn.com",
+        
+        'aliases' => [
+            '@assetBaseUrl' => "//local.madebybourn.com/uploads",
+            '@assetBasePath' => "uploads",
+        ],
     ],
     
 

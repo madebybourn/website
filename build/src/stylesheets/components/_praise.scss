@@ -1,0 +1,30 @@
+$praise-width: 110px;
+$praise-width-medium: 95px;
+$praise-width-small: 75px;
+
+.c-praises {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: spacing(xx-large);
+  width: 100%;
+
+  @include breakpoint(small) {
+    // justify-content: center;
+    margin-top: spacing(x-large);
+  }
+}
+
+.c-praise {
+  max-width: $praise-width;
+
+  @include breakpoint(medium) {
+    max-width: $praise-width-medium;
+  }
+
+  @include breakpoint(small) {
+    @include margin(spacing(xx-small) spacing(xxx-small));
+    max-width: $praise-width-small;
+  }
+}
