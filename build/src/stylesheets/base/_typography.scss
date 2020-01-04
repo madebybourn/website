@@ -108,6 +108,10 @@ a {
       color: $color-about;
     }
 
+    .u-page--headstart & {
+      color: $color-products;
+    }
+
     &::after {
       background-color: $dark-gray;
       
@@ -125,6 +129,10 @@ a {
 
       .u-page--about & {
         background-color: $color-about;
+      }
+
+      .u-page--headstart & {
+        background-color: $color-products;
       }
     }
   }

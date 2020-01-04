@@ -18,7 +18,7 @@ export default class ContactForm {
   _submitForm() {
     let self = this;
 
-    this.$contactForm.find("input, textarea").removeAttr("data-error");
+    this._clearErrors();
 
     // Send it to the server
     let request = $.post({
@@ -30,15 +30,21 @@ export default class ContactForm {
 
     request.done(function (response) {
       if (response.success) {
-        self.$contactFormResponse.html("<p>Your message has been sent!</p>").fadeIn();
+        self.$contactFormResponse.html("<p class='c-form__response--success'>Your message has been sent!</p>").fadeIn();
         self._resetForm();
+        $('html,body').animate({
+          scrollTop: self.$contactFormResponse.offset().top // - $('[data-header]').outerHeight()
+        });
       } else {
         // response.error will be an object containing any validation errors that occurred, indexed by field name
         // e.g. response.error.fromName => ["From Name is required"]
         // alert("An error occurred. Please try again.");
         // console.log(response);
-        self.$contactFormResponse.html("<p>An error occurred. Please try again.</p>").fadeIn();
+        self.$contactFormResponse.html("<p class='c-form__response--error'>An error occurred. Please try again.</p>").fadeIn();
         self._setErrors(response.errors);
+        $('html,body').animate({
+          scrollTop: self.$contactForm.offset().top - $('[data-header]').outerHeight() - 30
+        });
       }
     });
 
@@ -46,6 +52,11 @@ export default class ContactForm {
       var data = jqXHR.responseJSON;
       self.$contactFormResponse.html("<p>" + data.error + "</p>").fadeIn();
     });
+  }
+
+  _clearErrors() {
+    this.$contactForm.find("input, textarea").removeAttr("data-error");
+    this.$contactFormResponse.empty();
   }
 
   _setErrors(errors) {

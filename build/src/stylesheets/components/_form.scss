@@ -21,4 +21,30 @@
 .c-form__response {
 	display: none;
 	margin-top: spacing(small);
+
+	.c-form__response--error {
+		color: red;
+	}
+
+	.c-form__response--success {
+		.u-page--ventures & {
+			color: $color-ventures;
+		}
+
+		.u-page--consulting & {
+			color: $color-consulting;
+		}
+
+		.u-page--thoughts & {
+			color: $color-thoughts;
+		}
+
+		.u-page--about & {
+			color: $color-about;
+		}
+
+		.u-page--headstart & {
+			color: $color-products;
+		}
+	}
 }
