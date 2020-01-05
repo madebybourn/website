@@ -1,21 +1,23 @@
 <footer class="c-footer">
-	<div class="c-footer__left">
-		{% for entry in craft.entries.section('footerNavigation').type('leftNavigation').all() %}
-			{% if entry.footerItemUrl is not null %}
-				<a href="{{entry.footerItemUrl}}" class="c-footer__item">{{entry.footerItemText}}</a>
-			{% else %}
+	<div class="c-footer__content">
+		<div class="c-footer__left">
+			{% for entry in craft.entries.section('footerNavigation').type('leftNavigation').all() %}
+				{% if entry.footerItemUrl is not null %}
+					<a href="{{entry.footerItemUrl}}" class="c-footer__item">{{entry.footerItemText}}</a>
+				{% else %}
+					<span class="c-footer__item">{{entry.footerItemText}}</span>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="c-footer__right">
+			{% for entry in craft.entries.section('footerNavigation').type('rightNavigation').all() %}
+				{% if entry.footerItemUrl is not null %}
+				<a href="{{entry.footerItemUrl}}"
+					class="c-footer__item">{{entry.footerItemText}}</a>
+				{% else %}
 				<span class="c-footer__item">{{entry.footerItemText}}</span>
-			{% endif %}
-		{% endfor %}
-	</div>
-	<div class="c-footer__right">
-		{% for entry in craft.entries.section('footerNavigation').type('rightNavigation').all() %}
-			{% if entry.footerItemUrl is not null %}
-			<a href="{{entry.footerItemUrl}}"
-				class="c-footer__item">{{entry.footerItemText}}</a>
-			{% else %}
-			<span class="c-footer__item">{{entry.footerItemText}}</span>
-			{% endif %}
-		{% endfor %}
+				{% endif %}
+			{% endfor %}
+		</div>
 	</div>
 </footer>

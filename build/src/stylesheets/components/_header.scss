@@ -2,16 +2,19 @@ $c-logo-width: 80px;
 $c-logo-height: 15px;
 
 .c-header {
-  @include global-side-padding();
-  @include padding(spacing(medium) null spacing(x-small));
-  align-items: center;
   background: $base-background-color;
-  display: flex;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: $highest-z-index;
+}
+
+.c-header__content {
+  @include global-side-padding();
+  @include padding(spacing(medium) null spacing(x-small));
+  align-items: center;
+  display: flex;
 
   @include breakpoint(medium) {
     @include padding(spacing(small) null spacing(x-small));

@@ -9,7 +9,7 @@
   }
 
   @if $media == large {
-    @media all and (min-width: $medium-screen) { @content; }
+    @media all and (min-width: $medium-screen) and (max-width: ($large-screen - 1)) { @content; }
   }
 
   @if $media == medium {
@@ -27,9 +27,21 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin global-side-padding() {
-		@include padding(null $global-side-spacing);
 
+@mixin global-max-width() {
+  @include margin(null auto);
+  max-width: 1440px;
+  width: 100%;
+}
+
+@mixin global-side-padding() {
+  @include global-max-width();
+	@include padding(null $global-side-spacing);
+
+	@include breakpoint(large) {
+		@include padding(null $global-side-spacing-large);
+  }
+  
 	@include breakpoint(medium) {
 		@include padding(null $global-side-spacing-medium);
 	}
