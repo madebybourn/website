@@ -3,7 +3,11 @@
 		<div class="c-footer__left">
 			{% for entry in craft.entries.section('footerNavigation').type('leftNavigation').all() %}
 				{% if entry.footerItemUrl is not null %}
-					<a href="{{entry.footerItemUrl}}" class="c-footer__item">{{entry.footerItemText}}</a>
+					<a href="{{entry.footerItemUrl}}"
+					 	 class="c-footer__item"
+					 	 target="{{entry.footerItemUrlTarget}}">
+					 	{{entry.footerItemText}}
+					</a>
 				{% else %}
 					<span class="c-footer__item">{{entry.footerItemText}}</span>
 				{% endif %}
@@ -13,7 +17,10 @@
 			{% for entry in craft.entries.section('footerNavigation').type('rightNavigation').all() %}
 				{% if entry.footerItemUrl is not null %}
 				<a href="{{entry.footerItemUrl}}"
-					class="c-footer__item">{{entry.footerItemText}}</a>
+					 class="c-footer__item"
+					 target="{{entry.footerItemUrlTarget}}">
+					 {{entry.footerItemText}}
+				</a>
 				{% else %}
 				<span class="c-footer__item">{{entry.footerItemText}}</span>
 				{% endif %}
