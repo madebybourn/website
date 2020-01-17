@@ -2,10 +2,10 @@
 {% set title = entry.title %}
 
 {% block content %}
-{% set introCta = { link: "#emailcapture", text: entry.pageEmailCapture.type('emailCaptureForm').one().formButtonText } %}
+{% set mobileOnlyPageCta = { link: "#emailcapture", text: entry.pageEmailCapture.type('emailCaptureForm').one().formButtonText } %}
 
-<div class="c-product-page">
-  {% include "components/_page-intro.html" with { intro: entry, buttonCta: introCta } %}
+<div class="c-landing-page c-landing-page--email-capture">
+  {% include "components/_page-intro.html" with { intro: entry, mobileOnlyPageCta: mobileOnlyPageCta } %}
 
   <section class="c-page-content">
     {% if entry.pageInfo is defined %}
@@ -22,8 +22,8 @@
     {% endif %}
   </section>
 
-  <div id="email-capture" class="c-product-page__email-capture">
-    <div class="c-product-page__email-capture-form">
+  <div id="email-capture" class="c-landing-page__email-capture">
+    <div class="c-landing-page__email-capture-form">
       <form class="c-form" method="post" action="{{entry.pageEmailCapture.type('emailCaptureForm').one().formActionUrl}}" accept-charset="UTF-8">
         {{ csrfInput() }}
 

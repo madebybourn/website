@@ -108,8 +108,8 @@ a {
       color: $color-about;
     }
 
-    .u-page--headstart & {
-      color: $color-products;
+    .u-page--landing-page & {
+      color: $color-landing-page;
     }
 
     &::after {
@@ -131,8 +131,8 @@ a {
         background-color: $color-about;
       }
 
-      .u-page--headstart & {
-        background-color: $color-products;
+      .u-page--landing-page & {
+        background-color: $color-landing-page;
       }
     }
   }

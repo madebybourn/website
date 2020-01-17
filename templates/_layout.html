@@ -71,7 +71,7 @@
 
 </head>
 
-<body class="u-page--{{ requestFirstSegment }}">
+<body class="u-page--{% if requestFirstSegment == 'p' %}landing-page{% else %}{{ requestFirstSegment}}{% endif %}">
 
   {% if requestFirstSegment != 'browser-support' %}
   <!-- header -->

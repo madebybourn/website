@@ -6,8 +6,11 @@
 		{% if intro.pageSubheading is defined %}
 		<div class="c-page-intro__subheading">{{intro.pageSubheading}}</div>
 		{% endif %}
+		{% if pageCta is defined %}
+		<button data-href="{{pageCta.link}}" class="c-page-intro__button">{{pageCta.text}}</button>
+		{% endif %}
 	</div>
-	{% if buttonCta is defined %}
-		<button data-href="{{buttonCta.link}}" class="c-page-intro__button">{{buttonCta.text}}</button>
+	{% if mobileOnlyPageCta is defined %}
+		<button data-href="{{mobileOnlyPageCta.link}}" class="c-page-intro__button c-page-intro__button--mobile-only">{{mobileOnlyPageCta.text}}</button>
 	{% endif %}
 </section>

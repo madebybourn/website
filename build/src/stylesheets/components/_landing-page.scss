@@ -1,14 +1,17 @@
-$product-page-email-capture-width: 300px;
-$product-page-email-capture-width-medium: 275px;
-$product-page-padding-right: $global-side-spacing + $product-page-email-capture-width + (spacing(xx-small) * 2) + spacing(x-large);
-$product-page-padding-right-medium: $global-side-spacing-medium + $product-page-email-capture-width + (spacing(xx-small) * 2) + spacing(medium);
+$landing-page-email-capture-width: 300px;
+$landing-page-email-capture-width-medium: 275px;
+$landing-page-padding-right: $global-side-spacing + $landing-page-email-capture-width + (spacing(xx-small) * 2) + spacing(x-large);
+$landing-page-padding-right-medium: $global-side-spacing-medium + $landing-page-email-capture-width + (spacing(xx-small) * 2) + spacing(medium);
 
-.c-product-page {
+.c-landing-page {
   position: relative;
-  padding-right: $product-page-padding-right;
+}
+
+.c-landing-page--email-capture {
+  padding-right: $landing-page-padding-right;
 
   @include breakpoint(medium) {
-    padding-right: $product-page-padding-right-medium;
+    padding-right: $landing-page-padding-right-medium;
   }
 
   @include breakpoint(small) {
@@ -26,7 +29,7 @@ $product-page-padding-right-medium: $global-side-spacing-medium + $product-page-
   }
 }
 
-.c-product-page__email-capture {
+.c-landing-page__email-capture {
   padding-right: $global-side-spacing;
   position: fixed;
   right: 0;
@@ -43,13 +46,13 @@ $product-page-padding-right-medium: $global-side-spacing-medium + $product-page-
     transform: none;
   }
 
-  .c-product-page__email-capture-form {
+  .c-landing-page__email-capture-form {
     @include padding(spacing(xx-small));
     border: $base-border;
-    width: $product-page-email-capture-width + (spacing(xx-small) * 2);
+    width: $landing-page-email-capture-width + (spacing(xx-small) * 2);
 
     @include breakpoint(medium) {
-      width: $product-page-email-capture-width-medium + (spacing(xx-small) * 2);
+      width: $landing-page-email-capture-width-medium + (spacing(xx-small) * 2);
     }
 
     @include breakpoint(small) {
@@ -62,12 +65,12 @@ $product-page-padding-right-medium: $global-side-spacing-medium + $product-page-
   }
 
   button {
-    background-color: $color-products;
+    background-color: $color-landing-page;
     width: 100%;
 
     &:hover,
     &:focus {
-      background-color: shade($color-products, 25%);
+      background-color: shade($color-landing-page, 25%);
     }
   }
 }

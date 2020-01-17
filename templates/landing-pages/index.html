@@ -1,7 +1,7 @@
 {% block content %}
   {% if entry.type == "landingPageEmailCapture" %}
-    {% include "landing-pages/_consulting-package.html" %}
-  {% elseif entry.type == "landingPageConsultingPackage" %}
     {% include "landing-pages/_email-capture.html" %}
+  {% elseif entry.type == "landingPageConsultingPackage" %}
+    {% include "landing-pages/_consulting-package.html" %}
   {% endif %}
 {% endblock %}

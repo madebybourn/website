@@ -103,7 +103,7 @@ button {
   height: $form-input-height;
   font-family: $base-font-family-medium;
   font-weight: $medium-font-weight;
-  padding: spacing(xxx-small);
+  padding: spacing(xxx-small) spacing(xx-small);
   min-width: $form-input-min-width;
   transition: background-color $base-duration $base-timing;
 
@@ -139,11 +139,11 @@ button {
     }
   }
 
-  .u-page--headstart & {
-    background-color: $color-products;
+  .u-page--landing-page & {
+    background-color: $color-landing-page;
 
     &:hover {
-      background-color: shade($color-products, 25%);
+      background-color: shade($color-landing-page, 25%);
     }
   }
 }
