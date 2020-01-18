@@ -8,6 +8,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .u-page--consulting & {
+    border-top-color: $color-consulting;
+  }
+
+  .u-page--landing-page & {
+    border-top-color: $color-landing-page;
+  }
 }
 
 .c-service__category {

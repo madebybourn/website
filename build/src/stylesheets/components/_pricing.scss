@@ -8,8 +8,16 @@ $pricing-cost-border-radius: 5px;
   font-weight: $medium-font-weight;
   margin-bottom: spacing(x-small);
 
+  @include breakpoint(small) {
+    margin-bottom: spacing(x-small);
+  }
+
   .c-pricing__breakdown & {
     margin-bottom: spacing(xxx-small);
+
+    @include breakpoint(small) {
+      margin-bottom: spacing(xx-small);
+    }
   }
 }
 
@@ -17,6 +25,10 @@ $pricing-cost-border-radius: 5px;
   align-items: center;
   display: flex;
   margin-bottom: spacing(small);
+
+  @include breakpoint(small) {
+    margin-bottom: spacing(xxx-small);
+  }
 }
 
 .c-pricing__package {
@@ -28,6 +40,14 @@ $pricing-cost-border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @include breakpoint(medium) {
+    @include padding(spacing(xx-small) spacing(xx-small));
+  }
+
+  @include breakpoint(small) {
+    @include padding(spacing(xx-small) spacing(xx-small));
+  }
 }
 
 .c-pricing__package-heading {
@@ -44,11 +64,22 @@ $pricing-cost-border-radius: 5px;
 .c-pricing__package-footnote {
   color: $light-gray;
   font-size: modular-scale(-2);
+  line-height: 1.2;
+}
+
+.c-pricing__breakdown {
+  margin-top: spacing(xx-small);
 }
 
 .c-pricing__package-breakdown {
   ul {
     margin-top: 0;
+  }
+}
+
+.c-pricing__benefits {
+  @include breakpoint(small) {
+    margin-top: spacing(x-small);
   }
 }
 

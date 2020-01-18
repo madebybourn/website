@@ -14,10 +14,14 @@ $timeline-box-border-radius: 3px;
   font-family: $base-font-family-bold;
   font-size: modular-scale(0);
   font-weight: $bold-font-weight;
+
+  @include breakpoint(small) {
+    @include padding(spacing(x-small) null spacing(xxx-small));
+  }
 }
 
 .c-timeline__items {
-  align-items: center;
+  align-items: baseline;
   display: flex;
 }
 

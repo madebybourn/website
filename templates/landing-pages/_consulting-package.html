@@ -49,9 +49,7 @@
               {% if info.clientsImages is not null %}
                 <div class="c-landing-page__client-images u-grid">
                   {% for clientImage in info.clientsImages.all() %}
-                    <div class="u-grid__column--6">
-                      <img src="{{clientImage.url}}" alt="{{clientImage.title}}" class="c-client-images__image" />
-                    </div>
+                    {% include "components/_client-image.html" %}
                   {% endfor %}
                 </div>
               {% endif %}

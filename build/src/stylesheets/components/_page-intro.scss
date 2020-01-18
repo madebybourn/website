@@ -30,9 +30,7 @@ $page-intro-top-padding-small: 100px;
   margin-top: spacing(small);
 
   @include breakpoint(small) {
-    margin-bottom: spacing(large);
-    margin-top: -(spacing(x-small));
-    width: 100%;
+    // width: 100%;
   }
 }
 
@@ -41,5 +39,8 @@ $page-intro-top-padding-small: 100px;
 
   @include breakpoint(small) {
     display: block;
+    // margin-bottom: spacing(large);
+    // margin-top: -(spacing(x-small));
+    // width: 100%;
   }
 }
