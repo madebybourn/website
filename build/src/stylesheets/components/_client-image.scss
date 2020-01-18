@@ -3,3 +3,37 @@
   font-size: modular-scale(-1);
   margin-top: spacing(xxxx-small);
 }
+
+.c-client-image__link {
+  display: block;
+
+  img {
+    border: solid 1px transparent;
+  }
+
+  &:hover {
+    &::after {
+      background-color: transparent;
+
+      .u-page--consulting & {
+        background-color: transparent;
+      }
+
+      .u-page--landing-page & {
+        background-color: transparent;
+      }
+    }
+
+    img {
+      border: solid 1px transparent;
+
+      .u-page--consulting & {
+        border-color: $color-consulting;
+      }
+
+      .u-page--landing-page & {
+        border-color: $color-landing-page;
+      }
+    }
+  }
+}

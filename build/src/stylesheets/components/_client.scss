@@ -9,3 +9,15 @@
 .c-client__info {
   font-size: modular-scale(0);
 }
+
+.c-client__name {
+  .c-client__link:hover & {
+    .u-page--consulting & {
+      color: $color-consulting;
+    }
+
+    .u-page--landing-page & {
+      color: $color-landing-page;
+    }
+  }
+}

@@ -1,8 +1,17 @@
 <div class="c-client-image
             u-grid__column--6
             u-grid__column--12@small">
+
+  {% if client.clientExternalLink is not null %}
+  <a href="{{client.clientExternalLink}}" target="_blank" class="c-client-image__link">
+  {% endif %}
+
   <figure>
-    <img src="{{clientImage.url}}" alt="{{clientImage.title}}" class="c-client-image__image" />
-    <figcaption class="c-client-image__caption">{{clientImage.title}}</figcaption>
+    <img src="{{client.clientImage.one().url}}" alt="{{client.clientImage.one().title}}" class="c-client-image__image" />
+    <figcaption class="c-client-image__caption">{{client.clientImage.one().title}}</figcaption>
   </figure>
+
+  {% if client.clientExternalLink is not null %}
+  </a>
+  {% endif %}
 </div>

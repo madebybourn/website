@@ -1,9 +1,18 @@
 <div class="c-client">
-  <div class="c-combo c-client__info">
-    <h3 class="c-combo__name c-client__name">{{client.clientName}}</h3>
-    <span> - </span>
-    <p class="c-combo__description c-client__description">{{client.clientDescription}}</p>
-  </div>
+  {% if client.clientExternalLink is not null %}
+  <a href="{{client.clientExternalLink}}" target="_blank" class="c-client__link">
+  {% endif %}
+
+    <div class="c-combo c-client__info">
+      <h3 class="c-combo__name c-client__name">{{client.clientName}}</h3>
+      <span> - </span>
+      <p class="c-combo__description c-client__description">{{client.clientDescription}}</p>
+    </div>
+    
+  {% if client.clientExternalLink is not null %}
+  </a>
+  {% endif %}
+
   {% if client.clientIndustryTags.count() > 0 %}
   <div class="c-client__tags c-tags">
     {% for tag in client.clientIndustryTags.all() %}
