@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="29">
+  <g fill="#444" fill-rule="nonzero">
+    <path d="M29.495.178H1.59C.995.178.542.63.542 1.225v26.163c0 .593.453 1.047 1.047 1.047h27.907c.593 0 1.047-.453 1.047-1.047V1.225c0-.593-.453-1.047-1.047-1.047zM28.45 2.27v4.186H2.635V2.27H28.45zM2.635 26.34V8.55H28.45v17.79H2.635z"></path>
+    <circle cx="8.565" cy="4.364" r="1.36"></circle>
+    <circle cx="12.054" cy="4.364" r="1.36"></circle>
+    <circle cx="5.077" cy="4.364" r="1.36"></circle>
+    <use xlink:href="#B"></use>
+    <use xlink:href="#B" y="4.186"></use>
+    <use xlink:href="#B" y="8.373"></use>
+  </g>
+  <defs>
+    <path id="B" d="M24.577 12.457H6.507c-.593 0-1.047.453-1.047 1.047s.453 1.047 1.047 1.047h18.07c.593 0 1.047-.453 1.047-1.047s-.453-1.047-1.047-1.047z"></path>
+  </defs>
+</svg>

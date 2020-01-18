@@ -1,10 +1,8 @@
 {
   "require": {
-    "clubstudioltd/craft-inline-svg": "0.1.2",
     "craftcms/cms": "^3.0.0",
     "craftcms/contact-form": "2.2.6",
     "craftcms/redactor": "2.4.0",
-    "monachilada/craft-svgicons": "1.0.3",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {

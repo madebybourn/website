@@ -48,19 +48,18 @@
 
           {% if cost.benefitName is not null %}  
           <div class="c-pricing__benefit">
-            <span class="c-pricing__benefit-icon">{{ 'alert-circle'|feather }}</span>
+            {% if cost.benefitIcon is not null %}
+              {% set benefitIcon = cost.benefitIcon.one() %}
+              {% if benefitIcon and benefitIcon.extension == 'svg' %}
+                <span class="c-pricing__benefit-icon">{{ svg(benefitIcon) }}</span>
+              {% endif %}
+            {% endif %}
             <p class="c-pricing__benefit-name">{{cost.benefitName}}</p>
           </div>
           {% endif %}
 
-          <!-- {% if cost.benefitIcon is not null %}
-            {% set benefitIcon = cost.benefitIcon.one() %}
-            {% if benefitIcon %}
-              <p><a href="{{ benefitIcon.url }}">{{ benefitIcon.filename }}</a></p>
-              {{ inlineSvg(benefitIcon.title) }}
-            {% endif %}
-            {{ 'alert-circle'|feather }}
-          {% endif %} -->
+          
+
         {% endfor %}
       </div>
     {% endif %}
@@ -78,7 +77,12 @@
 
           {% if cost.addonName is not null %}  
           <div class="c-pricing__benefit">
-            <span class="c-pricing__benefit-icon">{{ 'alert-circle'|feather }}</span>
+            {% if cost.addonIcon is not null %}
+              {% set addonIcon = cost.addonIcon.one() %}
+              {% if addonIcon and addonIcon.extension == 'svg' %}
+                <span class="c-pricing__benefit-icon">{{ svg(addonIcon) }}</span>
+              {% endif %}
+            {% endif %}
             <p class="c-pricing__benefit-name">{{cost.addonName}}</p>
           </div>
           {% endif %}
@@ -94,3 +98,5 @@
     </div>
   {% endif %}
 </div>
+
+<!-- https://calendly.com/bourn/consulting-intro-call?month=2020-01&name=Kim&email=kim@gmail.com&a1=6784318439&a2=Some words and cool. -->

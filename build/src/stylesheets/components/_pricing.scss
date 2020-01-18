@@ -68,11 +68,14 @@ $pricing-cost-border-radius: 5px;
 }
 
 .c-pricing__breakdown {
-  margin-top: spacing(xx-small);
+  @include breakpoint(small) {
+    margin-top: spacing(xx-small);
+  }
 }
 
 .c-pricing__package-breakdown {
   ul {
+    list-style: none;
     margin-top: 0;
   }
 }
@@ -89,12 +92,17 @@ $pricing-cost-border-radius: 5px;
 }
 
 .c-pricing__benefit + .c-pricing__benefit {
-  margin-top: spacing(xx-small);
+  margin-top: spacing(x-small);
 }
 
 .c-pricing__benefit-icon {
   display: block;
-  margin-right: spacing(xxxx-small);
+  line-height: 1;
+  margin-right: spacing(xx-small);
+}
+
+.c-pricing__benefit-name {
+  font-size: modular-scale(-1);
 }
 
 .c-pricing__notes {
