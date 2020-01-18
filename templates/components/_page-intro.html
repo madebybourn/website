@@ -1,7 +1,13 @@
+{% if craft.request.getParam("q") is not null %}
+	{% set pageHeading = intro.pageHeading|replace({'business': craft.request.getParam("q")}) %}
+{% else %}
+	{% set pageHeading = intro.pageHeading %}
+{% endif %}
+
 <section class="c-page-intro">
 	<div class="c-page-intro__content">
 		{% if intro.pageHeading is defined %}
-		<h1 class="c-page-intro__heading" data-page-heading>{{intro.pageHeading}}</h1>
+		<h1 class="c-page-intro__heading" data-page-heading>{{pageHeading}}</h1>
 		{% endif %}
 		
 		{% if intro.pageSubheading is defined %}
