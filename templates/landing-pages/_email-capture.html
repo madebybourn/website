@@ -2,7 +2,7 @@
 {% set title = entry.title %}
 
 {% block content %}
-{% set mobileOnlyPageCta = { link: "#emailcapture", text: entry.pageEmailCapture.type('emailCaptureForm').one().formButtonText } %}
+{% set mobileOnlyPageCta = { link: "#email-capture", text: entry.pageEmailCapture.type('emailCaptureForm').one().formButtonText } %}
 
 <div class="c-landing-page c-landing-page--email-capture">
   {% include "components/_page-intro.html" with { intro: entry, mobileOnlyPageCta: mobileOnlyPageCta } %}

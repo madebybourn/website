@@ -9,11 +9,11 @@
 		{% endif %}
 
 		{% if pageCta is defined %}
-		<button data-href="{{pageCta.link}}" class="c-page-intro__button">{{pageCta.text}}</button>
+		<button data-href="{{pageCta.link}}" class="c-page-intro__button" data-page-intro-cta>{{pageCta.text}}</button>
 		{% endif %}
 
 		{% if mobileOnlyPageCta is defined %}
-			<button data-href="{{mobileOnlyPageCta.link}}" class="c-page-intro__button c-page-intro__button--mobile-only">{{mobileOnlyPageCta.text}}</button>
+			<button data-href="{{mobileOnlyPageCta.link}}" class="c-page-intro__button c-page-intro__button--mobile-only" data-page-intro-cta>{{mobileOnlyPageCta.text}}</button>
 		{% endif %}
 	</div>
 </section>

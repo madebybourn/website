@@ -1,5 +1,10 @@
-<form class="c-form" method="post" action="" accept-charset="UTF-8" data-contact-form
-  data-contact-form-success-message="{{entry.pageContactForm.type('form').one().formSuccessMessage}}">
+<form class="c-form"
+      id="contact-form"
+      method="post" 
+      action="contact-form/send" 
+      accept-charset="UTF-8" 
+      data-contact-form
+      data-contact-form-success-message="{{entry.pageContactForm.type('form').one().formSuccessMessage}}">
   {{ csrfInput() }}
   <input type="hidden" name="action" value="contact-form/send">
 
