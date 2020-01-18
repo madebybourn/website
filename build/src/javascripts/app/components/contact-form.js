@@ -35,7 +35,7 @@ export default class ContactForm {
         $('html,body').animate({
           scrollTop: self.$contactFormResponse.offset().top - $('[data-header]').outerHeight() - 30
         }, 500, function () {
-            if (self.$contactForm.attr("data-contact-form-calendly-event") !== "") {
+          if (self.$contactForm.attr("data-contact-form-calendly-event") !== "") {
             let message = {
               calendlyEvent: self.$contactForm.attr("data-contact-form-calendly-event"),
               fromName: $("[name='fromName']").val(),
