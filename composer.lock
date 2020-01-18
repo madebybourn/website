@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a34ee9aad67d033325dc18cd1f7de35e",
+    "content-hash": "e6612ab665b163abf74b6287db62e47f",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -60,6 +60,42 @@
                 "markdown-extra"
             ],
             "time": "2018-03-26T11:24:36+00:00"
+        },
+        {
+            "name": "clubstudioltd/craft-inline-svg",
+            "version": "0.1.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clubstudioltd/craft-inline-svg/zipball/9f5abb7093ffcab2546fa1737903b97f347d9e25",
+                "reference": "9f5abb7093ffcab2546fa1737903b97f347d9e25",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Inline SVG",
+                "handle": "inlinesvg",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://github.com/clubstudioltd/craft-inline-svg/blob/master/CHANGELOG.md",
+                "documentationUrl": "https://github.com/clubstudioltd/craft-inline-svg",
+                "downloadUrl": "https://github.com/clubstudioltd/craft-inline-svg/archive/master.zip",
+                "developer": "Club Studio Ltd",
+                "developerUrl": "https://clubstudio.co.uk",
+                "class": "club\\inlinesvg\\InlineSvg"
+            },
+            "autoload": {
+                "psr-4": {
+                    "club\\inlinesvg\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A plugin to aid inlining SVGs in Craft 3",
+            "time": "2019-08-11T17:13:46+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -1260,6 +1296,55 @@
                 "shell"
             ],
             "time": "2019-12-20T08:48:10+00:00"
+        },
+        {
+            "name": "monachilada/craft-svgicons",
+            "version": "1.0.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/monachilada/craft-svgicons/zipball/21227e019a643cf7b04634775a3d345b9fa8c1ce",
+                "reference": "21227e019a643cf7b04634775a3d345b9fa8c1ce",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "SVG Icons",
+                "handle": "craft-svgicons",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/monachilada/craft-svgicons/master/CHANGELOG.md",
+                "class": "monachilada\\svgicons\\SvgIcons"
+            },
+            "autoload": {
+                "psr-4": {
+                    "monachilada\\svgicons\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Pierce",
+                    "homepage": "https://michaelpierce.trade/"
+                }
+            ],
+            "description": "Craft CMS Twig extension to include SVGs from the Feather and Zondicons SVG icon libraries directly in your templates.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "svg icons"
+            ],
+            "support": {
+                "docs": "https://github.com/monachilada/craft-svgicons/blob/master/README.md",
+                "issues": "https://github.com/monachilada/craft-svgicons/issues"
+            },
+            "time": "2019-02-10T11:34:31+00:00"
         },
         {
             "name": "opis/closure",

@@ -1,0 +1,17 @@
+<div class="c-timeline">
+  {% if timeline.heading is not null %}
+  <h4 class="c-timeline__heading">{{timeline.heading}}</h4>
+  {% endif %}
+
+  {% if timeline.itemDescription is not null %}
+  <div class="c-timeline__items">
+    <div class="c-timeline__items-number">
+      <span class="c-timeline__items-number-type">{{timeline.itemType}}</span>
+      <span class="c-timeline__items-number-num">{{timeline.itemNumber}}</span>
+    </div>
+    <div class="c-timeline__items-description">
+      {{timeline.itemDescription}}
+    </div>
+  </div>
+  {% endif %}
+</div>

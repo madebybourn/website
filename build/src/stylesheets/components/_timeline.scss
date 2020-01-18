@@ -1,0 +1,53 @@
+$timeline-box-number-size: 50px;
+$timeline-box-border-radius: 3px;
+
+.c-timeline {
+
+}
+
+.c-timeline + .c-timeline {
+  margin-top: spacing(xx-small);
+}
+
+.c-timeline__heading {
+  @include padding(spacing(small) null spacing(xx-small));
+  font-family: $base-font-family-bold;
+  font-size: modular-scale(0);
+  font-weight: $bold-font-weight;
+}
+
+.c-timeline__items {
+  align-items: center;
+  display: flex;
+}
+
+.c-timeline__items-number {
+  @include padding(7px spacing(xxxx-small) spacing(xxxx-small));
+  @include size($timeline-box-number-size);
+  align-items: center;
+  border: $base-border;
+  border-radius: $timeline-box-border-radius;
+  display: block;
+  flex: none;
+  flex-basis: $timeline-box-number-size;
+  text-align: center;
+}
+
+.c-timeline__items-number-type {
+  display: block;
+  color: $light-gray;
+  font-size: modular-scale(-4);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.c-timeline__items-number-num {
+  display: block;
+  font-size: modular-scale(-1);
+  line-height: 1.1;
+  margin-top: 7px;
+}
+
+.c-timeline__items-description {
+  margin-left: spacing(xx-small);
+}

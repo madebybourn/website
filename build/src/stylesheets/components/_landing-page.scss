@@ -74,3 +74,26 @@ $landing-page-padding-right-medium: $global-side-spacing-medium + $landing-page-
     }
   }
 }
+
+.c-landing-page__client-images {
+  margin-top: spacing(large);
+}
+
+.c-landing-page__process {
+  ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+  }
+  ol li {
+    counter-increment: my-awesome-counter;
+  }
+  ol li::before {
+    content: counter(my-awesome-counter) ". ";
+    color: red;
+    font-weight: bold;
+  }
+}
+
+.c-landing-page__contact-form {
+  margin-top: spacing(x-small);
+}

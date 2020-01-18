@@ -1,0 +1,77 @@
+$pricing-cost-height: 160px;
+$pricing-cost-width: 100%; // 250px;
+$pricing-cost-border-radius: 5px;
+
+.c-pricing__cost-heading {
+  font-family: $base-font-family-medium;
+  font-size: modular-scale(0);
+  font-weight: $medium-font-weight;
+  margin-bottom: spacing(x-small);
+
+  .c-pricing__breakdown & {
+    margin-bottom: spacing(xxx-small);
+  }
+}
+
+.c-pricing__cost-info {
+  align-items: center;
+  display: flex;
+  margin-bottom: spacing(small);
+}
+
+.c-pricing__package {
+  @include padding(spacing(xx-small) spacing(x-small));
+  @include size($pricing-cost-width, $pricing-cost-height);
+  border: $base-border;
+  border-top-color: $color-landing-page;
+  border-radius: $pricing-cost-border-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.c-pricing__package-heading {
+  color: $base-font-color;
+  font-size: modular-scale(-1);
+}
+
+.c-pricing__package-price {
+  font-family: $base-font-family-bold;
+  font-size: modular-scale(5);
+  font-weight: $medium-font-weight;
+}
+
+.c-pricing__package-footnote {
+  color: $light-gray;
+  font-size: modular-scale(-2);
+}
+
+.c-pricing__package-breakdown {
+  ul {
+    margin-top: 0;
+  }
+}
+
+.c-pricing__benefit {
+  align-items: center;
+  display: flex;
+}
+
+.c-pricing__benefit + .c-pricing__benefit {
+  margin-top: spacing(xx-small);
+}
+
+.c-pricing__benefit-icon {
+  display: block;
+  margin-right: spacing(xxxx-small);
+}
+
+.c-pricing__notes {
+  color: $light-gray;
+  font-size: modular-scale(-3);
+  margin-top: spacing(x-small);
+
+  p + p {
+    margin-top: spacing(xxx-small);
+  }
+}

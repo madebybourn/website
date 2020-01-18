@@ -1,0 +1,96 @@
+<div class="c-pricing">
+
+  <div class="c-pricing__cost-info u-grid">
+    {% if entry.pricingCost is not null %}
+      <div class="c-pricing__package
+                  u-grid__column--6
+                  u-grid__column--12@small">
+        {% for cost in entry.pricingCost.all() %}
+          <h5 class="c-pricing__package-heading">{{cost.heading}}</h5>
+          <span class="c-pricing__package-price">{{cost.price}}</span>
+          <small class="c-pricing__package-footnote">{{cost.footnote}}</small>
+          {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if entry.pricingBreakdown is not null %}
+      <div class="c-pricing__breakdown
+                  u-grid__column--6
+                  u-grid__column--12@small">
+        {% for cost in entry.pricingBreakdown.all() %}
+          {% if cost.heading is not null%}  
+            <h4 class="c-pricing__cost-heading">
+              {{cost.heading}}
+            </h4>
+          {% endif %}
+
+          {% if cost.breakdown is not null%}
+            <div class="c-pricing__package-breakdown">
+              {{cost.breakdown}}
+            </div>
+          {% endif %}
+          {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="c-pricing__benefits-info u-grid">
+    {% if entry.pricingBenefits is not null %}
+      <div class="c-pricing__benefits
+                  u-grid__column--6
+                  u-grid__column--12@small">
+        {% for cost in entry.pricingBenefits.all() %}
+          {% if cost.heading is not null%}  
+            <h4 class="c-pricing__cost-heading">
+              {{cost.heading}}
+            </h4>
+          {% endif %}
+
+          {% if cost.benefitName is not null %}  
+          <div class="c-pricing__benefit">
+            <span class="c-pricing__benefit-icon">{{ 'alert-circle'|feather }}</span>
+            <p class="c-pricing__benefit-name">{{cost.benefitName}}</p>
+          </div>
+          {% endif %}
+
+          <!-- {% if cost.benefitIcon is not null %}
+            {% set benefitIcon = cost.benefitIcon.one() %}
+            {% if benefitIcon %}
+              <p><a href="{{ benefitIcon.url }}">{{ benefitIcon.filename }}</a></p>
+              {{ inlineSvg(benefitIcon.title) }}
+            {% endif %}
+            {{ 'alert-circle'|feather }}
+          {% endif %} -->
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if entry.pricingAddOns is not null %}
+      <div class="c-pricing__benefits
+                  u-grid__column--6
+                  u-grid__column--12@small">
+        {% for cost in entry.pricingAddOns.all() %}
+          {% if cost.heading is not null %}  
+            <h4 class="c-pricing__cost-heading">
+              {{cost.heading}}
+            </h4>
+          {% endif %}
+
+          {% if cost.addonName is not null %}  
+          <div class="c-pricing__benefit">
+            <span class="c-pricing__benefit-icon">{{ 'alert-circle'|feather }}</span>
+            <p class="c-pricing__benefit-name">{{cost.addonName}}</p>
+          </div>
+          {% endif %}
+
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if entry.pricingNotes is not null %}
+    <div class="c-pricing__notes">
+        {{entry.pricingNotes}}
+    </div>
+  {% endif %}
+</div>

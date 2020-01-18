@@ -50,40 +50,7 @@
           {{entry.consultingContactDescription}}
         </div>
         <div class="c-consulting-contact__form">
-
-          <form class="c-form"
-                method="post"
-                action=""
-                accept-charset="UTF-8"
-                data-contact-form
-                data-contact-form-success-message="{{entry.pageContactForm.type('form').one().formSuccessMessage}}">
-            {{ csrfInput() }}
-            <input type="hidden" name="action" value="contact-form/send">
-
-            {% for field in entry.pageContactForm.type('formFields').all() %}
-              {% if field.fieldType == "hidden" %}
-              <input id="{{field.fieldName}}" type="{{field.fieldType}}" name="{{field.fieldName}}" value="{{field.fieldInitialValue}}">
-              {% else %}
-              <div class="c-form__field-group">
-                <div class="c-form__field">
-                  <label for="{{field.fieldName}}">{{field.fieldLabel}}</label>
-
-                  {% if field.fieldType == "textarea" %}
-                  <textarea id="{{field.fieldName}}" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}"></textarea>
-                  {% else %}
-                  <input id="{{field.fieldName}}" type="{{field.fieldType}}" name="{{field.fieldName}}" placeholder="{{field.fieldPlaceholder}}" value="{{field.fieldInitialValue}}">
-                  {% endif %}
-                </div>
-              </div>
-              {% endif %}
-            {% endfor %}
-
-            <div class="c-form__button-group">
-              <button type="submit" class="c-form__button">{{entry.pageContactForm.type('form').one().formButtonText}}</button>
-            </div>
-            <div class="c-form__response" data-contact-form-response></div>
-
-          </form>
+          {% include "components/_contact-form.html" %}
         </div>
       </div>
     </div>
