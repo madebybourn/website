@@ -61,6 +61,10 @@ button {
     .u-page--about & {
       border-color: $color-about;
     }
+
+    .u-page--landing-page & {
+      border-color: $color-landing-page;
+    }
   }
 
   &:disabled {

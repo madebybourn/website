@@ -31,10 +31,31 @@ export default class ContactForm {
     request.done(function (response) {
       if (response.success) {
         self.$contactFormResponse.html("<p class='c-form__response--success'>" + self.$contactForm.attr("data-contact-form-success-message") +"</p>").fadeIn();
-        self._resetForm();
+
         $('html,body').animate({
-          scrollTop: self.$contactFormResponse.offset().top // - $('[data-header]').outerHeight()
+          scrollTop: self.$contactFormResponse.offset().top - $('[data-header]').outerHeight() - 30
+        }, 500, function () {
+            if (self.$contactForm.attr("data-contact-form-calendly-event") !== "") {
+            let message = {
+              calendlyEvent: self.$contactForm.attr("data-contact-form-calendly-event"),
+              fromName: $("[name='fromName']").val(),
+              fromEmail: $("[name='fromEmail']").val(),
+              phoneNumber: ($("[name='message[phoneNumber]']")) ? $("[name='message[phoneNumber]']").val() : null,
+              message: ($("[name='message[body]']")) ? $("[name='message[body]']").val() : $("[name='message']").val(),
+            }
+            Calendly.initPopupWidget({
+              url: 'https://calendly.com/bourn/' + message.calendlyEvent +'?name=' + message.fromName + '&email=' + message.fromEmail + '&a1=' + message.phoneNumber + '&a2=' +message.message
+            });
+
+            setTimeout(() => {
+              self._resetForm();
+            }, 2000);
+          }
+          else {
+            self._resetForm();
+          }
         });
+
       } else {
         // response.error will be an object containing any validation errors that occurred, indexed by field name
         // e.g. response.error.fromName => ["From Name is required"]
@@ -81,6 +102,11 @@ export default class ContactForm {
       $("[name='fromEmail']").after("<small class='c-form__error'>" + errors.fromEmail + "</small>");
     }
 
+    if (errors.phoneNumber) {
+      $("[name='message[phoneNumber]']").attr("data-error", "");
+      $("[name='message[phoneNumber]']").after("<small class='c-form__error'>" + errors.phoneNumber + "</small>");
+    }
+
     if (errors.message) {
       $("[name='message'], [name='message[body]']").attr("data-error", "");
       $("[name='message'], [name='message[body]']").after("<small class='c-form__error'>" + errors.message + "</small>");
@@ -88,7 +114,7 @@ export default class ContactForm {
   }
 
   _resetForm() {
-    this.$contactForm.find("input, textarea").val("");
+    this.$contactForm.find("input, textarea").not('[name="CRAFT_CSRF_TOKEN"], [name="action"], [name="subject"]').val("");
   }
 }
 

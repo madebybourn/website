@@ -4,7 +4,8 @@
       action="contact-form/send" 
       accept-charset="UTF-8" 
       data-contact-form
-      data-contact-form-success-message="{{entry.pageContactForm.type('form').one().formSuccessMessage}}">
+      data-contact-form-success-message="{{entry.pageContactForm.type('form').one().formSuccessMessage}}"
+      data-contact-form-calendly-event="{{entry.pageContactForm.type('form').one().formCalendlyEvent}}">
   {{ csrfInput() }}
   <input type="hidden" name="action" value="contact-form/send">
 
@@ -34,3 +35,10 @@
   </div>
   <div class="c-form__response" data-contact-form-response></div>
 </form>
+
+{% if entry.pageContactForm.type('form').one().formCalendlyEvent is not null %}
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<!-- Calendly link widget end -->
+{% endif %}
