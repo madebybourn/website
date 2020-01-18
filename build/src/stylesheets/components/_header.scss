@@ -21,7 +21,7 @@ $c-logo-height: 15px;
   }
 
   @include breakpoint(small) {
-    @include padding($global-side-spacing-small null spacing(x-small));
+    @include padding($global-side-spacing-small null spacing(xx-small));
   }
 }
 
