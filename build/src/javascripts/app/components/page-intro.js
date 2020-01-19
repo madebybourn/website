@@ -9,7 +9,7 @@ export default class PageIntro {
 
   _bindEvents() {
     this.$pageIntroCta.on("click", this._scrollToForm.bind(this));
-    this._updatePageHeading();
+    // this._updatePageHeading();
   }
 
   _scrollToForm() {
