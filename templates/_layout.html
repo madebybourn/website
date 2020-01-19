@@ -77,7 +77,11 @@
   <!-- header -->
   {% endif %}
 
-  {% include "components/_header.html" %}
+  {% if requestFirstSegment == 'p' %}
+    {% include "components/_header-landing-page.html" %}
+  {% else %}
+    {% include "components/_header.html" %}
+  {% endif %}
 
   <main class="c-main">
     {% block content %}

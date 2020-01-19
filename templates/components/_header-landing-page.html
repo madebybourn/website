@@ -1,0 +1,44 @@
+{% set currentNavItem = craft.entries.section('mainNavigation').slug(requestFirstSegment).one() %}
+
+<header class="c-header" data-header="landing-page">
+  <div class="c-header__content">
+    <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
+    <nav class="c-nav" data-nav="landing-page">
+      <ul class="c-nav__items">
+        {% for entry in entry.landingPageNavigation.all() %}
+        <li class="c-nav__item">
+          <a href="{{ entry.navItemLink }}"
+             data-href="{{ entry.navItemLink }}"
+            class="c-nav__link c-nav__link--landing-page {% if requestFirstSegment == entry.slug %}is-active{% endif %}"
+            data-nav-item>
+            {{ entry.navItemText }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <ul class="c-nav__items c-nav__items--mobile">
+        {% for entry in craft.entries.section('footerNavigation').type('rightNavigation').all() %}
+        <li class="c-nav__item c-nav__item--mobile">
+          {% if entry.footerItemUrl is not null %}
+          <a href="{{entry.footerItemUrl}}">{{entry.footerItemText}}</a>
+          {% else %}
+          <span>{{entry.footerItemText}}</span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul class="c-nav__mobile-items">
+    </nav>
+    <div class="c-hamburger" data-hamburger>
+      {% if currentNavItem is not null %}
+      <span class="c-hamburger__current-page u-color--landing-page">{{currentNavItem.navItemText}}</span>
+      {% elseif entry.title is defined %}
+      <span class="c-hamburger__current-page">{{entry.title}}</span>
+      {% endif %}
+      <div class="c-hamburger__icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</header>

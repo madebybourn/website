@@ -9,9 +9,9 @@
 
   <section class="c-page-content">
     {% if entry.consultingServices is defined %}
-      <section class="c-page-content__section">
+      <section class="c-page-content__section" id="{% if entry.consultingServices.type('info').one().sectionId is not null %}{{entry.consultingServices.type('info').one().sectionId}}{%endif%}">
         <div class="c-services u-grid">
-          {% for service in entry.consultingServices.all() %}
+          {% for service in entry.consultingServices.type('service').all() %}
           <div class="u-grid__column--3 
                           u-grid__column--3@medium 
                           u-grid__column--6@small">
@@ -24,7 +24,7 @@
 
     {% if entry.pageInfo is defined %}
       {% for info in entry.pageInfo.all() %}
-        <section class="c-page-content__section">
+        <section class="c-page-content__section" id="{% if info.sectionId is not null %}{{info.sectionId}}{%endif%}">
           <div class="u-grid">
             <div class="u-grid__column--4 
                           u-grid__column--4@medium 
@@ -34,6 +34,7 @@
             <div class="u-grid__column--7 
                           u-grid__column--8@medium 
                           u-grid__column--12@small">
+
               {% if info.description is not null %}
                 {{info.description}}
               {% endif %}
@@ -76,6 +77,7 @@
               </div>
               {% endif %}
             </div>
+
           </div>
         </section>
       {% endfor %}
