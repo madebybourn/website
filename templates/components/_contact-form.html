@@ -8,6 +8,7 @@
       data-contact-form-calendly-event="{{entry.pageContactForm.type('form').one().formCalendlyEvent}}">
   {{ csrfInput() }}
   <input type="hidden" name="action" value="contact-form/send">
+  <input id="secretHoneypotSave" name="secretHoneypotSave" type="text" style="display:none">
 
   {% for field in entry.pageContactForm.type('formFields').all() %}
   {% if field.fieldType == "hidden" %}
