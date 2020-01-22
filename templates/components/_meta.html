@@ -1,19 +1,44 @@
 {% if meta is defined %}
-  <meta name="description" content="{{ meta.metaDescription }}">
-  <meta name="keywords" content="{{ meta.metaKeywords }}">
+  {% if entry.metaImage is not null and entry.metaImage.count() > 0 %}
+    {% set metaImage = entry.metaImage %}
+  {% else %}
+    {% set metaImage = meta.metaImage %}
+  {% endif %}
+  
+  {% set title = (entry.metaTitle is not null) ? entry.metaTitle : entry.title %}
+  {% if title is defined %}
+    {% set metaTitle = "#{meta.metaTitle} | #{title}" %}
+  {% else %}
+    {% set metaTitle = meta.metaTitle %}
+  {% endif %}
+
+  {% if entry.metaDescription is not null and entry.metaDescription.count() > 0 %}
+    {% set metaDescription = entry.metaDescription %}
+  {% else %}
+    {% set metaDescription = meta.metaDescription %}
+  {% endif %}
+
+  {% if entry.metaKeywords is not null and entry.metaKeywords.count() > 0 %}
+    {% set metaKeywords = entry.metaKeywords %}
+  {% else %}
+    {% set metaKeywords = meta.metaKeywords %}
+  {% endif %}
+
+  <meta name="description" content="{{ metaDescription }}">
+  <meta name="keywords" content="{{ metaKeywords }}">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-  <meta property="og:title" content="{{ meta.metaTitle }}" />
+  <meta property="og:title" content="{{ metaTitle }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:description" content="{{ meta.metaDescription }}" />
+  <meta property="og:description" content="{{ metaDescription }}" />
   <meta property="og:url" content="{{ siteUrl }}" />
-  <meta property="og:image" content="{% if meta.metaImage.count() > 0 %}{{meta.metaImage.one().url()}}{% endif %}" />
-  <meta property="og:site_name" content="{{ meta.metaTitle }}" />
+  <meta property="og:image" content="{% if metaImage.count() > 0 %}{{metaImage.one().url()}}{% endif %}" />
+  <meta property="og:site_name" content="{{ metaTitle }}" />
   <meta property="fb:admins" content="508343267" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ meta.metaTitle }}">
-  <meta name="twitter:image:src" content="{% if meta.metaImage.count() > 0 %}{{meta.metaImage.one().url()}}{% endif %}">
+  <meta name="twitter:title" content="{{ metaTitle }}">
+  <meta name="twitter:image:src" content="{% if metaImage.count() > 0 %}{{metaImage.one().url()}}{% endif %}">
   <meta name="twitter:creator" content="{{ meta.metaTwitterUser }}">
 
   {% if meta.metaTwitterUser != "" %}

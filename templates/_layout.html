@@ -49,9 +49,12 @@
   <script>window.jQuery || document.write('<script type="text/javascript" src="/javascripts/jquery.js" ><\/script>')</script>
 
   <!-- <script src="/javascripts/vendor.js"></script> -->
+  {% set title = (entry.metaTitle is not null) ? entry.metaTitle : entry.title %}
 
-  <title>{% if meta is defined %}{{ meta.metaTitle }}{% endif %}{% if title is defined %} | {{ title }}{% endif %}
+  <title>
+    {% if meta is defined %}{{ meta.metaTitle }}{% endif %}{% if title is defined %} | {{ title }}{% endif %}
   </title>
+  
   <link rel="home" href="{{ siteUrl }}" />
 
   {% if analytics.googleAnalyticsId is defined %}

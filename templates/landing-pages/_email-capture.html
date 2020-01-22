@@ -1,5 +1,4 @@
 {% extends "_layout" %}
-{% set title = entry.title %}
 
 {% block content %}
 {% set mobileOnlyPageCta = { link: "#email-capture", text: entry.pageEmailCapture.type('emailCaptureForm').one().formButtonText } %}
