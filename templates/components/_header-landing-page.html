@@ -5,7 +5,7 @@
     <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
     <nav class="c-nav" data-nav="landing-page">
       <ul class="c-nav__items">
-        {% for entry in entry.landingPageNavigation.all() %}
+        {% for entry in entry.landingPageNavigation.type("main").all() %}
         <li class="c-nav__item">
           <a href="{{ entry.navItemLink }}"
              data-href="{{ entry.navItemLink }}"
@@ -16,6 +16,17 @@
         </li>
         {% endfor %}
       </ul>
+
+      {% if entry.landingPageNavigation.type("callout").count() > 0 %}
+        {% set callout = entry.landingPageNavigation.type("callout").one() %}
+        <div class="c-nav__item c-nav__item--callout">
+          <a href="{{ callout.navItemLink }}"
+             class="c-nav__link c-nav__link--landing-page">
+            {{ callout.navItemText }}
+          </a>
+        </div>
+      {% endif %}
+
       <ul class="c-nav__items c-nav__items--mobile">
         {% for entry in craft.entries.section('footerNavigation').type('rightNavigation').all() %}
         <li class="c-nav__item c-nav__item--mobile">
