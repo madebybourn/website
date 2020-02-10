@@ -86,7 +86,9 @@
       </div>
       <div>
         {% if entry.eventTicketsEmbed is not null %}
+        <div class="c-footer-cta__button">
           {{entry.eventTicketsEmbed|raw}}
+        </div>
         {% else %}
           <a href="{{entry.pageFooterCtaLink}}" class="c-footer-cta__button c-button--link">{{entry.pageFooterCtaText}}</a>
         {% endif %}

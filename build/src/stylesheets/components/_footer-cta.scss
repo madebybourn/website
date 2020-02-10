@@ -13,3 +13,9 @@
     display: block;
   }
 }
+
+.c-footer-cta__button {
+  @include breakpoint(small) {
+    margin-top: spacing(x-small);
+  }
+}
