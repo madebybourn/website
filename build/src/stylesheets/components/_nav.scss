@@ -124,5 +124,13 @@
         background-color: $color-about;
       }
     }
+
+    &.c-nav__link--landing-page {
+      color: $color-landing-page;
+
+      &::after {
+        background-color: $color-landing-page;
+      }
+    }
   }
 }

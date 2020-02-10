@@ -34,6 +34,7 @@
     {% endif %}
   </div>
 
+  {% if entry.pricingBenefits is not null %}
   <div class="c-pricing__benefits-info u-grid">
     {% if entry.pricingBenefits is not null %}
       <div class="c-pricing__benefits
@@ -91,7 +92,8 @@
       </div>
     {% endif %}
   </div>
-
+  {% endif %}
+  
   {% if entry.pricingNotes is not null %}
     <div class="c-pricing__notes">
         {{entry.pricingNotes}}

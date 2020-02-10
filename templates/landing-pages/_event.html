@@ -1,0 +1,99 @@
+{% extends "_layout" %}
+
+{% block content %}
+{% set pageCta = { link: entry.pageCtaLink, text: entry.pageCta } %}
+
+<div class="c-landing-page c-landing-page--event">
+  {% include "components/_page-intro.html" with { intro: entry, pageCta: pageCta } %}
+
+  <section class="c-page-content">
+
+    {% if entry.pageInfo is defined %}
+    {% for info in entry.pageInfo.all() %}
+    <section class="c-page-content__section" id="{% if info.sectionId is not null %}{{info.sectionId}}{%endif%}">
+      <div class="u-grid">
+        <div class="u-grid__column--4 
+                          u-grid__column--4@medium 
+                          u-grid__column--12@small">
+          <h2 class="c-page-content__section-heading">{{info.heading}}</h2>
+        </div>
+        <div class="u-grid__column--7 
+                          u-grid__column--8@medium 
+                          u-grid__column--12@small">
+
+          {% if info.description is not null %}
+          <div class="c-landing-page__description">
+            {{info.description}}
+          </div>
+          {% endif %}
+
+          {% if info.clients is not null %}
+          <div class="c-landing-page__clients">
+            {% for client in info.clients.all() %}
+            {% include "components/_client.html" %}
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if info.clientsImages is not null %}
+          <div class="c-landing-page__client-images u-grid">
+            {% for client in info.clientsImages.all() %}
+            {% include "components/_client-image.html" %}
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if info.timelineInfo %}
+          <div class="c-landing-page__timeline">
+            {% if entry.timeline is not null %}
+            {% for timeline in entry.timeline.all() %}
+            {% include "components/_timeline.html" %}
+            {% endfor %}
+            {% endif %}
+          </div>
+          {% endif %}
+
+          {% if info.pricingInfo %}
+          <div class="c-landing-page__pricing">
+            {% include "components/_pricing.html" %}
+          </div>
+          {% endif %}
+
+          {% if info.contactInfo %}
+          <div class="c-landing-page__contact-form">
+            {% include "components/_contact-form.html" %}
+          </div>
+          {% endif %}
+
+          {% if info.eventLocationInfo %}
+          <div class="c-landing-page__event-location">
+            {{entry.eventLocationMap|raw}}
+          </div>
+          {% endif %}
+        </div>
+
+      </div>
+    </section>
+    {% endfor %}
+    {% endif %}
+  </section>
+
+  {% if entry.pageFooterCtaHeading is not null %}
+  <section class="c-footer-cta">
+    <div class="c-footer-cta__content">
+      <div>
+        <h2 class="c-footer-cta__heading">{{entry.pageFooterCtaHeading}}</h2>
+      </div>
+      <div>
+        {% if entry.eventTicketsEmbed is not null %}
+          {{entry.eventTicketsEmbed|raw}}
+        {% else %}
+          <a href="{{entry.pageFooterCtaLink}}" class="c-footer-cta__button c-button--link">{{entry.pageFooterCtaText}}</a>
+        {% endif %}
+        </div>
+    </div>
+  </section>
+  {% endif %}
+</div>
+
+{% endblock %}

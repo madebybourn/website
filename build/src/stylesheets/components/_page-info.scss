@@ -5,3 +5,26 @@
 .c-page-info__content-description {
   margin-top: spacing(small);
 }
+
+.c-landing-page__description {
+  h5 {
+    margin-top: spacing(small);
+    margin-bottom: spacing(xxx-small);
+
+    @include breakpoint(small) {
+      margin-top: spacing(x-small);
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    margin-top: spacing(xx-small);
+  }
+}
+
+.c-landing-page__description + .c-landing-page__pricing {
+  margin-top: spacing(small);
+}

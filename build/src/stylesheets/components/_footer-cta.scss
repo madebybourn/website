@@ -1,0 +1,15 @@
+.c-footer-cta {
+  @include global-side-padding();
+  @include padding(spacing(large) null);
+  background-color: #f7f7f7;
+}
+
+.c-footer-cta__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint(small) {
+    display: block;
+  }
+}

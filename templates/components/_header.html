@@ -6,9 +6,10 @@
     <nav class="c-nav" data-nav>
       <ul class="c-nav__items">
         {% for entry in craft.entries.section('mainNavigation').all() %}
+
         <li class="c-nav__item">
           <a href="{{ entry.navItemLink.one().url }}" data-slug="{{ entry.slug }}"
-            class="c-nav__link c-nav__link--{{ entry.slug }} {% if requestFirstSegment == entry.slug %}is-active{% endif %}">
+            class="c-nav__link c-nav__link--{{ entry.slug }} {% if requestFirstSegment == entry.slug %}is-active{% endif %} {% if '/p/' in entry.navItemLink.one().url %}c-nav__link--landing-page{% endif %}">
             {{ entry.navItemText }}
           </a>
         </li>

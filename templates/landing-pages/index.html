@@ -3,5 +3,7 @@
     {% include "landing-pages/_email-capture.html" %}
   {% elseif entry.type == "landingPageConsultingPackage" %}
     {% include "landing-pages/_consulting-package.html" %}
+  {% elseif entry.type == "landingPageEvent" %}
+    {% include "landing-pages/_event.html" %}
   {% endif %}
 {% endblock %}

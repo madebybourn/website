@@ -45,6 +45,14 @@ h3 {
   }
 }
 
+h4 {
+  font-size: modular-scale(1);
+}
+
+h5 {
+  font-size: modular-scale(0);
+}
+
 p {
   font-size: $body-font-size;
   line-height: $base-line-height;

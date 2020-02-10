@@ -15,7 +15,17 @@
 		{% endif %}
 
 		{% if pageCta is defined %}
-		<button data-href="{{pageCta.link}}" class="c-page-intro__button" data-page-intro-cta>{{pageCta.text}}</button>
+			{% if entry.eventTicketsEmbed is not null %}
+				<div class="c-page-intro__button">
+					{{entry.eventTicketsEmbed|raw}}
+				</div>
+			{% else %}
+				{% if pageCta.link|first == "#" %}
+					<button data-href="{{pageCta.link}}" class="c-page-intro__button" data-page-intro-cta>{{pageCta.text}}</button>
+				{% else %}
+					<a href="{{pageCta.link}}" class="c-page-intro__button c-button--link">{{pageCta.text}}</a>
+				{% endif %}
+			{% endif %}
 		{% endif %}
 
 		{% if mobileOnlyPageCta is defined %}

@@ -24,11 +24,6 @@ $pricing-cost-border-radius: 5px;
 .c-pricing__cost-info {
   align-items: center;
   display: flex;
-  margin-bottom: spacing(small);
-
-  @include breakpoint(small) {
-    margin-bottom: spacing(xxx-small);
-  }
 }
 
 .c-pricing__package {
@@ -77,6 +72,15 @@ $pricing-cost-border-radius: 5px;
   ul {
     list-style: none;
     margin-top: 0;
+    margin-left: 0;
+  }
+}
+
+.c-pricing__benefits-info {
+  margin-top: spacing(small);
+
+  @include breakpoint(small) {
+    margin-top: spacing(xxxx-small);
   }
 }
 

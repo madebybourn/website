@@ -1,0 +1,21 @@
+.c-button,
+.c-button--link {
+  @extend button;
+  line-height: $form-input-height - (spacing(xxx-small) * 2);
+  text-align: center;
+  width: fit-content;
+
+  @include breakpoint(small) {
+    margin-top: spacing(x-small);
+  }
+
+  &:hover,
+  &:active {
+    color: #fff !important;
+  }
+  
+  &::after {
+    content: "";
+    display: none;
+  }
+}

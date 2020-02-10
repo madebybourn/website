@@ -32,7 +32,7 @@ button {
   background-color: #F5F5F5;
   border: $form-base-border;
   border-radius: $base-border-radius;
-  box-shadow: 0;
+  box-shadow: none;
   box-sizing: border-box;
   color: $dark-gray;
   height: $form-input-height;
@@ -43,7 +43,7 @@ button {
   &:hover,
   &:focus {
     border-color: $dark-gray;
-    box-shadow: 0;
+    box-shadow: none;
     outline: none;
 
     .u-page--ventures & {
@@ -101,7 +101,7 @@ button {
   background-color: $dark-gray;
   border: 0;
   border-radius: $base-border-radius;
-  box-shadow: 0;
+  box-shadow: none;
   color: $white;
   cursor: pointer;
   height: $form-input-height;
