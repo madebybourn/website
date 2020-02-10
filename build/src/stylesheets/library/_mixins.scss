@@ -44,7 +44,11 @@
   
 	@include breakpoint(medium) {
 		@include padding(null $global-side-spacing-medium);
-	}
+  }
+  
+  @media all and (max-width: $small-medium-screen) {
+		@include padding(null $global-side-spacing-small-medium);
+  }
 
 	@include breakpoint(small) {
 		@include padding(null $global-side-spacing-small);

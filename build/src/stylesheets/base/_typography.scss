@@ -24,6 +24,10 @@ h1 {
   font-family: $heading-font-family;
   font-size: modular-scale(11);
 
+  @include breakpoint(medium) {
+    font-size: modular-scale(9);
+  }
+
   @include breakpoint(small) {
     font-size: modular-scale(7);
   }
