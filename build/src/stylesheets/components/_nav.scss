@@ -1,5 +1,8 @@
 .c-nav {
+  display: flex;
+  justify-content: space-between;
   margin-left: spacing(large);
+  width: 100%;
 
   @include breakpoint(small) {
     @include padding(spacing(xxx-large) $global-side-spacing-small spacing(x-large));
@@ -33,6 +36,7 @@
   align-items: center;
   display: flex;
   list-style-type: none;
+  margin-left: 0;
   margin-top: 0;
 
   @include breakpoint(small) {
@@ -132,5 +136,11 @@
         background-color: $color-landing-page;
       }
     }
+  }
+}
+
+.c-nav__item--callout {
+  .c-nav__link--landing-page {
+    // color: $color-landing-page;
   }
 }

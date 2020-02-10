@@ -5,8 +5,7 @@
     <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
     <nav class="c-nav" data-nav>
       <ul class="c-nav__items">
-        {% for entry in craft.entries.section('mainNavigation').all() %}
-
+        {% for entry in craft.entries.section('mainNavigation').type('mainNavigation').all() %}
         <li class="c-nav__item">
           <a href="{{ entry.navItemLink.one().url }}" data-slug="{{ entry.slug }}"
             class="c-nav__link c-nav__link--{{ entry.slug }} {% if requestFirstSegment == entry.slug %}is-active{% endif %} {% if '/p/' in entry.navItemLink.one().url %}c-nav__link--landing-page{% endif %}">
@@ -15,6 +14,17 @@
         </li>
         {% endfor %}
       </ul>
+
+      {% if craft.entries.section('mainNavigation').type('mainNavigationCallout').count() > 0 %}
+        {% set callout = craft.entries.section('mainNavigation').type('mainNavigationCallout').one() %}
+        <div class="c-nav__item c-nav__item--callout">
+          <a href="{{ callout.navItemLink.one().url }}" data-slug="{{ callout.slug }}"
+            class="c-nav__link {% if requestFirstSegment == callout.slug %}is-active{% endif %} {% if '/p/' in callout.navItemLink.one().url %}c-nav__link--landing-page{%else%}c-nav__link--{{ callout.slug }}{% endif %}">
+            {{ callout.navItemText }}
+          </a>
+        </div>
+      {% endif %}
+
       <ul class="c-nav__items c-nav__items--mobile">
       {% for entry in craft.entries.section('footerNavigation').type('rightNavigation').all() %}
         <li class="c-nav__item c-nav__item--mobile">
