@@ -61,6 +61,10 @@
   @include breakpoint(small) {
     font-size: modular-scale(2);
   }
+
+  @media all and (max-width: 320px) {
+    font-size: modular-scale(0);
+  }
 }
 
 .c-nav__item + .c-nav__item {
@@ -70,12 +74,20 @@
     margin-top: spacing(small);
     margin-left: 0;
   }
+
+  @media all and (max-width: 320px) {
+    margin-top: spacing(x-small);
+  }
 }
 
 .c-nav__item--mobile {
   @include breakpoint(small) {
     color: $light-gray;
     font-size: modular-scale(0);
+  }
+
+  @media all and (max-width: 320px) {
+    font-size: modular-scale(-1);
   }
 }
 
@@ -140,7 +152,14 @@
 }
 
 .c-nav__item--callout {
-  .c-nav__link--landing-page {
-    // color: $color-landing-page;
+  text-align: right;
+  
+  @include breakpoint(small) {
+    margin-top: spacing(small);
+    text-align: center;
+  }
+
+  @media all and (max-width: 320px) {
+    margin-top: spacing(x-small);
   }
 }
