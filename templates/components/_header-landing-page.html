@@ -9,8 +9,9 @@
         <li class="c-nav__item">
           <a href="{{ entry.navItemLink }}"
              data-href="{{ entry.navItemLink }}"
-            class="c-nav__link c-nav__link--landing-page {% if requestFirstSegment == entry.slug %}is-active{% endif %}"
-            data-nav-item>
+             class="c-nav__link c-nav__link--landing-page {% if requestFirstSegment == entry.slug %}is-active{% endif %}"
+             data-nav-item
+             target="{% if '#' in entry.navItemLink %}_self{%else%}_blank{% endif %}">
             {{ entry.navItemText }}
           </a>
         </li>
