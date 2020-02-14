@@ -12,9 +12,11 @@
 								u-grid__column--12@small">
 			<p class="c-venture__description">{{venture.ventureDescription}}</p>
 			<div class="c-venture__tags c-tags">
+				{% if entry.venturesListHideDates == false %}
 				<small class="c-venture__tag c-tag">
 					{{venture.ventureLaunchDate|date_modify("+1 day")|date("M Y")}}
 				</small>
+				{% endif %}
 				{% if venture.ventureProjectTypeTags.count() > 0 %}
 					{% for tag in venture.ventureProjectTypeTags.all() %}
 					<small class="c-venture__tag c-tag">{{tag.title}}</small>
