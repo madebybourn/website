@@ -161,6 +161,8 @@ a {
 
   p &,
   li & {
+    display: inline-block;
+    
     &::after {
       background-color: $dark-gray;
     }
