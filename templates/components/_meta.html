@@ -31,7 +31,7 @@
   <meta property="og:title" content="{{ metaTitle }}" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="{{ metaDescription }}" />
-  <meta property="og:url" content="{{ siteUrl }}" />
+  <meta property="og:url" content="{{ craft.request.url }}" />
   <meta property="og:image" content="{% if metaImage.count() > 0 %}{{metaImage.one().url()}}{% endif %}" />
   <meta property="og:site_name" content="{{ metaTitle }}" />
   <meta property="fb:admins" content="508343267" />
