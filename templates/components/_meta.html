@@ -12,13 +12,13 @@
     {% set metaTitle = meta.metaTitle %}
   {% endif %}
 
-  {% if entry.metaDescription is not null and entry.metaDescription.count() > 0 %}
+  {% if entry.metaDescription is not null %}
     {% set metaDescription = entry.metaDescription %}
   {% else %}
     {% set metaDescription = meta.metaDescription %}
   {% endif %}
 
-  {% if entry.metaKeywords is not null and entry.metaKeywords.count() > 0 %}
+  {% if entry.metaKeywords is not null %}
     {% set metaKeywords = entry.metaKeywords %}
   {% else %}
     {% set metaKeywords = meta.metaKeywords %}
