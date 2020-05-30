@@ -7,10 +7,20 @@
       <ul class="c-nav__items">
         {% for entry in craft.entries.section('mainNavigation').type('mainNavigation').all() %}
         <li class="c-nav__item">
-          <a href="{{ entry.navItemLink.one().url }}" data-slug="{{ entry.slug }}"
-            class="c-nav__link c-nav__link--{{ entry.slug }} {% if requestFirstSegment == entry.slug %}is-active{% endif %} {% if '/p/' in entry.navItemLink.one().url %}c-nav__link--landing-page{% endif %}">
+          {% if entry.navItemLinkInternal is not empty %}
+          <a href="{{ entry.navItemLinkInternal.one().url }}" 
+             data-slug="{{ entry.slug }}"
+             class="c-nav__link c-nav__link--{{ entry.slug }} {% if requestFirstSegment == entry.slug %}is-active{% endif %} {% if '/p/' in entry.navItemLinkInternal.one().url %}c-nav__link--landing-page{% endif %}">
             {{ entry.navItemText }}
           </a>
+          {% elseif entry.navItemLinkExternal is not null %}
+            <a href="{{ entry.navItemLinkExternal }}"
+               data-slug="{{ entry.slug }}" 
+               target="_blank"
+               class="c-nav__link c-nav__link--{{ entry.slug }}">
+              {{ entry.navItemText }}
+            </a>
+          {% endif %}
         </li>
         {% endfor %}
       </ul>
@@ -18,10 +28,20 @@
       {% if craft.entries.section('mainNavigation').type('mainNavigationCallout').count() > 0 %}
         {% set callout = craft.entries.section('mainNavigation').type('mainNavigationCallout').one() %}
         <div class="c-nav__item c-nav__item--callout">
-          <a href="{{ callout.navItemLink.one().url }}" data-slug="{{ callout.slug }}"
-            class="c-nav__link {% if requestFirstSegment == callout.slug %}is-active{% endif %} {% if '/p/' in callout.navItemLink.one().url %}c-nav__link--landing-page{%else%}c-nav__link--{{ callout.slug }}{% endif %}">
+          {% if callout.navItemLinkInternal is not empty %}
+          <a href="{{ callout.navItemLinkInternal.one().url }}"
+             data-slug="{{ callout.slug }}"
+             class="c-nav__link {% if requestFirstSegment == callout.slug %}is-active{% endif %} {% if '/p/' in callout.navItemLinkInternal.one().url %}c-nav__link--landing-page{%else%}c-nav__link--{{ callout.slug }}{% endif %}">
             {{ callout.navItemText }}
           </a>
+          {% elseif callout.navItemLinkExternal is not null %}
+          <a href="{{ callout.navItemLinkExternal }}" 
+             data-slug="{{ callout.slug }}"
+             class="c-nav__link c-nav__link--{{ callout.slug }}""
+             target="_blank">
+            {{ callout.navItemText }}
+          </a>
+          {% endif %}
         </div>
       {% endif %}
 
@@ -35,7 +55,7 @@
           {% endif %}
         </li>
       {% endfor %}
-      </ul class="c-nav__mobile-items">
+      </ul>
     </nav>
     <div class="c-hamburger" data-hamburger>
       {% if currentNavItem is not null %}
